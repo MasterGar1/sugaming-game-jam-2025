@@ -6,6 +6,7 @@ class_name Enemy
 @onready var cooldown := $AttackCooldown
 
 @export var proj: PackedScene = preload('res://projectiles/enemy_projectile.tscn')
+@export var score: int = 100
 
 var can_see_player: bool = false
 
@@ -38,7 +39,7 @@ func _on_hurtbox_entered(area: Hitbox) -> void:
 
 func die() -> void:
 	if health <= 0:
-		## TODO: Other death stuff
+		Global.score += score
 		queue_free()
 
 func _on_navigation_velocity_computed(safe_velocity: Vector2) -> void:
@@ -47,5 +48,5 @@ func _on_navigation_velocity_computed(safe_velocity: Vector2) -> void:
 func _on_attack_body_entered(_body: Node2D) -> void:
 	can_see_player = true
 
-func _on_attack_body_exited(body: Node2D) -> void:
+func _on_attack_body_exited(_body: Node2D) -> void:
 	can_see_player = false

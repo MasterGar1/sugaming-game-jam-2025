@@ -13,8 +13,8 @@ height = 116.0
 radius = 697.523
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uvc0s"]
-radius = 87.0
-height = 228.0
+radius = 65.0
+height = 168.0
 
 [node name="Enemy" type="CharacterBody2D"]
 z_index = 1
