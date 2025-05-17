@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwwkqy2tfl80b"]
+
+[ext_resource type="PackedScene" uid="uid://c24e0ccpyff82" path="res://projectiles/projectile.tscn" id="1_hi54q"]
+
+[node name="Projectile" instance=ExtResource("1_hi54q")]
+
+[node name="Hitbox" parent="." index="0"]
+collision_layer = 2
+
+[editable path="Hitbox"]

@@ -2,15 +2,17 @@ extends Entity
 class_name Player
 
 # Onready
-@onready var projectile := preload('res://projectiles/projectile.tscn')
 @onready var collision := $CollisionShape2D
 
 # Vars
 var direction: Vector2
-var movement_locked: bool = false
 var force_duration: float
+var movement_locked: bool = false
 
 signal end_movement_lock()
+
+func _ready() -> void:
+	projectile = preload('res://projectiles/player_projectile.tscn')
 
 func _physics_process(delta: float) -> void:
 	if not movement_locked:

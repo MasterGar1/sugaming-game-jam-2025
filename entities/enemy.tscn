@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dugqfgqtqrbkt"]
+[gd_scene load_steps=7 format=3 uid="uid://dugqfgqtqrbkt"]
 
 [ext_resource type="Script" uid="uid://8kstkay7anl5" path="res://entities/enemy.gd" id="1_p7g5j"]
 [ext_resource type="Texture2D" uid="uid://ndragblbgxr7" path="res://icon.svg" id="2_pqhw6"]
 [ext_resource type="PackedScene" uid="uid://sodkubjdowjx" path="res://components/hurtbox.tscn" id="3_b4nis"]
+[ext_resource type="PackedScene" uid="uid://c8ljwvtcmk328" path="res://components/hitbox.tscn" id="3_uvc0s"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b4nis"]
 radius = 58.0
@@ -25,6 +26,8 @@ texture = ExtResource("2_pqhw6")
 rotation = -1.57079
 shape = SubResource("CapsuleShape2D_b4nis")
 debug_color = Color(0.389365, 0.476674, 0.987177, 0.42)
+
+[node name="Hitbox" parent="." instance=ExtResource("3_uvc0s")]
 
 [node name="Hurtbox" parent="." instance=ExtResource("3_b4nis")]
 collision_mask = 4

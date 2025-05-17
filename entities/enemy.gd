@@ -4,6 +4,11 @@ class_name Enemy
 @onready var navigation: NavigationAgent2D = $NavigationAgent2D
 @onready var player: Player = get_tree().get_nodes_in_group('player').front()
 
+@export var proj: PackedScene = preload('res://projectiles/enemy_projectile.tscn')
+
+func _ready() -> void:
+	projectile = proj
+
 func _physics_process(delta: float) -> void:
 	follow_player(delta)
 

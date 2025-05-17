@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Entity
 
-@onready var projectile := preload('res://projectiles/projectile.tscn')
+var projectile: Resource
 
 ## TODO: Implement damage
 @export var health: int:
