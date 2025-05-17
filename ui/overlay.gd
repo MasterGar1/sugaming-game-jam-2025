@@ -6,7 +6,7 @@ extends Control
 @onready var time := $Time
 
 func get_time_formatted() -> String:
-	var total_sec = Time.get_ticks_msec() / 1000
+	var total_sec = int(Global.time_secs)
 	var min = total_sec / 60
 	var sec = total_sec % 60
 	return "%02d:%02d" % [min, sec]
