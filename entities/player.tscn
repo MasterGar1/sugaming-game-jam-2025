@@ -42,6 +42,8 @@ drag_bottom_margin = 0.3
 editor_draw_drag_margin = true
 script = ExtResource("3_e4p34")
 
+[node name="Skills" type="Node2D" parent="."]
+
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 avoidance_enabled = true
 debug_enabled = true
