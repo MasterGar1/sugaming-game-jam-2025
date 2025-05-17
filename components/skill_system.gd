@@ -6,14 +6,10 @@ extends Node
 @onready var player_skills: Node = player.get_node("Skills")
 
 @export var player: Player
-@export var skills: Array[PackedScene]
 @export var skill_button: PackedScene
 
 func _ready() -> void:
 	timer.timeout.connect(sacrifice_skill)
-	
-	for skill in skills:
-		player_skills.add_child(skill.instantiate())
 	
 func sacrifice_skill() -> void:
 	var current_skills = player_skills.get_children()

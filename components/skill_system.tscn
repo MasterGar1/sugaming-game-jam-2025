@@ -1,14 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://ck3yk8dfk3n8y"]
+[gd_scene load_steps=3 format=3 uid="uid://ck3yk8dfk3n8y"]
 
 [ext_resource type="Script" uid="uid://nwp4eu0rbyjg" path="res://components/skill_system.gd" id="1_bs6qn"]
-[ext_resource type="PackedScene" uid="uid://dsxin2xfufqql" path="res://skills/skill_button.tscn" id="2_p10cc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p10cc"]
 bg_color = Color(0.6, 0.6, 0.6, 0.615686)
 
 [node name="SkillSystem" type="Node"]
 script = ExtResource("1_bs6qn")
-skill_button = ExtResource("2_p10cc")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 20.0
@@ -27,6 +25,7 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_p10cc")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer/SkillSacrifice"]
+layout_mode = 0
 offset_left = 4.0
 offset_top = 4.0
 offset_right = 1480.0

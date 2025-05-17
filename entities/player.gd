@@ -5,6 +5,7 @@ class_name Player
 @onready var collision := $CollisionShape2D
 @onready var cooldown := $AttackCooldown
 
+@export var skills: Array[PackedScene]
 # Vars
 var direction: Vector2
 var force_duration: float
@@ -14,6 +15,8 @@ signal end_movement_lock()
 
 func _ready() -> void:
 	projectile = preload('res://projectiles/player_projectile.tscn')
+	for skill in skills:
+		$Skills.add_child(skill.instantiate())
 
 func _physics_process(delta: float) -> void:
 	if not movement_locked:
