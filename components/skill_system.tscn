@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ck3yk8dfk3n8y"]
+
+[ext_resource type="Script" uid="uid://nwp4eu0rbyjg" path="res://components/skill_system.gd" id="1_bs6qn"]
+
+[node name="SkillSystem" type="Node"]
+script = ExtResource("1_bs6qn")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true

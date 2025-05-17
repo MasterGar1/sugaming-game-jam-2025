@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2p8ovrjf8r5y"]
+[gd_scene load_steps=8 format=3 uid="uid://d2p8ovrjf8r5y"]
 
 [ext_resource type="Script" uid="uid://3810ju0dfdtb" path="res://world/world.gd" id="1_6xmxd"]
 [ext_resource type="PackedScene" uid="uid://bk5ewacumhgtj" path="res://entities/player.tscn" id="2_tcf2h"]
 [ext_resource type="PackedScene" uid="uid://dugqfgqtqrbkt" path="res://entities/enemy.tscn" id="3_4717r"]
+[ext_resource type="PackedScene" uid="uid://ck3yk8dfk3n8y" path="res://components/skill_system.tscn" id="4_h5o24"]
+[ext_resource type="PackedScene" uid="uid://dwbgxlb2lm8cy" path="res://skills/dash.tscn" id="5_mmdvd"]
 
 [sub_resource type="TileSet" id="TileSet_4717r"]
 
@@ -42,3 +44,10 @@ speed = 1
 [node name="Enemy4" parent="." instance=ExtResource("3_4717r")]
 position = Vector2(483, 1266)
 speed = 1
+
+[node name="SkillSystem" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_h5o24")]
+player = NodePath("../Player")
+skills = Array[PackedScene]([ExtResource("5_mmdvd")])
+
+[editable path="Player"]
+[editable path="Player/Hurtbox"]
