@@ -11,7 +11,7 @@ func try_mouse_bomb() -> void:
 	
 		var mouse_bomb := bomb.instantiate()
 		get_tree().current_scene.add_child(mouse_bomb)
-		mouse_bomb.setup(damage, get_global_mouse_position())
+		mouse_bomb.setup(damage, get_global_mouse_position(), level)
 		print("bombed")
 
 func _input(event: InputEvent) -> void:
