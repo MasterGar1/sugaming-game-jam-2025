@@ -15,6 +15,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(436.299, 810.233, -473.
 speed = 5
 
 [node name="Dash" parent="Player/Skills" index="0" instance=ExtResource("2_sotnn")]
+level = 3
 
 [node name="Enemy" parent="." instance=ExtResource("3_ps8fs")]
 position = Vector2(240, 197)
@@ -26,9 +27,24 @@ navigation_polygon = SubResource("NavigationPolygon_ps8fs")
 
 [node name="Enemy2" parent="." instance=ExtResource("3_ps8fs")]
 position = Vector2(-377, -225)
+speed = 1
 
 [node name="Enemy3" parent="." instance=ExtResource("3_ps8fs")]
 position = Vector2(-390, 298)
+
+[node name="Enemy4" parent="." instance=ExtResource("3_ps8fs")]
+position = Vector2(526, -227)
+speed = 1
+
+[node name="Enemy5" parent="." instance=ExtResource("3_ps8fs")]
+position = Vector2(-661, -411)
+speed = 1
+
+[node name="Enemy6" parent="." instance=ExtResource("3_ps8fs")]
+position = Vector2(-717, 398)
+
+[node name="Enemy7" parent="." instance=ExtResource("3_ps8fs")]
+position = Vector2(788, 349)
 
 [editable path="Player"]
 [editable path="Player/Hurtbox"]
