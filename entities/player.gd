@@ -34,6 +34,9 @@ func _physics_process(delta: float) -> void:
 			end_movement_lock.emit()
 
 func _on_hurtbox_entered(area: Area2D) -> void:
+	if movement_locked:
+		return
+		
 	take_damage(area)
 	die()
 	

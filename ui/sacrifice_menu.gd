@@ -27,7 +27,8 @@ func remove_skills() -> void:
 		skill_holder.remove_child(skill_holder.get_child(0))
 
 func _on_timer_timeout() -> void:
-	if get_tree().get_nodes_in_group("player")[0].skill_holder.get_child_count() == 0: return
+	if get_tree().get_nodes_in_group("player")[0].skill_holder.get_child_count() == 0: 
+		return
 	get_parent().pause()
 	add_skills()
 	show()
