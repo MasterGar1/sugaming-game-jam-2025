@@ -26,10 +26,9 @@ func _physics_process(delta: float) -> void:
 			movement_locked = false
 			end_movement_lock.emit()
 
-## TODO: Make it take damage
 func _on_hurtbox_entered(area: Area2D) -> void:
 	take_damage(area)
-	print(health)
+	die()
 	
 func apply_force(dir: Vector2, duration: float) -> void:
 	direction = dir
@@ -43,11 +42,4 @@ func die() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("shoot"):
-		shoot()
-
-# Shoots projectile from the player's position towards where they are facing
-func shoot() -> void:
-	var nd: Projectile = projectile.instantiate()
-	nd.global_position = self.global_position
-	get_tree().current_scene.add_child(nd)
-	nd.setup(10, 100000, get_global_mouse_position() - global_position, 10) # Default values
+		shoot(get_global_mouse_position() - global_position)

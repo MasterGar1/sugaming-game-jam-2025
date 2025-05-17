@@ -4,7 +4,6 @@ const DASH_SPEED: float = 20
 
 @onready var cooldown := $Cooldown
 @onready var collider := $Hitbox/CollisionShape2D
-@onready var actor = get_parent().get_parent()
 @onready var count: int = level
 
 @export var base_duration: float = 20
@@ -17,14 +16,14 @@ func try_dash() -> void:
 	
 	if count <= 0 or direction.length() == 0 or not collider.disabled:
 		return
-		
+	
 	count -= 1
 	cooldown.start()
 	actor.collision.disabled = true
 	collider.disabled = false
 	
 	actor.apply_force(direction, base_duration)
-		
+
 func reload():
 	count = level
 		

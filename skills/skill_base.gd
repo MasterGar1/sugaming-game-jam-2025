@@ -1,6 +1,8 @@
 extends Node
 class_name Skill
 
+@onready var actor: Entity = get_parent().get_parent()
+
 @export var level: int = 1
 @export var skill_name: String
 
