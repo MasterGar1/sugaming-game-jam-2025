@@ -12,11 +12,14 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(436.299, 810.233, -473.
 
 [node name="TestSkillWorld" type="Node2D"]
 
+[node name="Player_Skills#Dash" parent="." instance=ExtResource("2_sotnn")]
+level = 3
+
 [node name="Player" parent="." instance=ExtResource("1_ccgfq")]
 speed = 5.0
 
-[node name="Dash" parent="Player/Skills" index="0" instance=ExtResource("2_sotnn")]
-level = 3
+[node name="CollisionShape2D" parent="Player/Hurtbox" index="0"]
+shape = null
 
 [node name="SlowZone" parent="Player/Skills" index="1" instance=ExtResource("3_dc1lj")]
 
@@ -48,5 +51,3 @@ position = Vector2(788, 349)
 
 [editable path="Player"]
 [editable path="Player/Hurtbox"]
-[editable path="Player/Skills/Dash"]
-[editable path="Player/Skills/Dash/Hitbox"]

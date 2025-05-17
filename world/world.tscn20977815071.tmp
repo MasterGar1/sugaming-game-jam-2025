@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d2p8ovrjf8r5y"]
+[gd_scene load_steps=12 format=3 uid="uid://d2p8ovrjf8r5y"]
 
 [ext_resource type="Script" uid="uid://3810ju0dfdtb" path="res://world/world.gd" id="1_6xmxd"]
 [ext_resource type="Texture2D" uid="uid://pboayg3685r0" path="res://textures/Zombie-Tileset---_0077_Capa-78.png" id="2_sc4t8"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://cqmyoxs05fiee" path="res://textures/Zombie-Tileset---_0078_Capa-79.png" id="3_ai45w"]
 [ext_resource type="PackedScene" uid="uid://ck3yk8dfk3n8y" path="res://components/skill_system.tscn" id="4_h5o24"]
 [ext_resource type="PackedScene" uid="uid://dwbgxlb2lm8cy" path="res://skills/dash.tscn" id="5_mmdvd"]
-[ext_resource type="PackedScene" uid="uid://qwgvx1anpjyw" path="res://skills/slow_zone.tscn" id="7_sc4t8"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mmdvd"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -57,11 +56,6 @@ autostart = true
 
 [node name="SkillSystem" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_h5o24")]
 player = NodePath("../Player")
-skills = Array[PackedScene]([ExtResource("5_mmdvd"), ExtResource("7_sc4t8")])
-
-[node name="GridContainer" parent="SkillSystem/PopupPanel/VBoxContainer" index="1"]
-theme_override_constants/h_separation = 20
+skills = Array[PackedScene]([ExtResource("5_mmdvd")])
 
 [connection signal="timeout" from="EnemySpawner" to="." method="_on_enemy_spawner_timeout"]
-
-[editable path="SkillSystem"]

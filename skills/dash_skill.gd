@@ -25,14 +25,16 @@ func try_dash() -> void:
 	actor.apply_force(direction, base_duration)
 
 func reload():
-	count = min(count + 1, level)
-	
-	if count < level:
-		cooldown.start()
+	count = level
 		
 func end_dash():
 	actor.collision.disabled = false
 	collider.disabled = true
+	
+func level_up():
+	super()
+	reload()
+	cooldown.stop()
 
 func _ready():
 	print(count)

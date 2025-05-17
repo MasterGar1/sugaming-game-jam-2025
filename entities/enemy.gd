@@ -9,8 +9,9 @@ func _physics_process(delta: float) -> void:
 
 func follow_player(delta: float) -> void:
 	make_path()
-	var dir: Vector2 = to_local(navigation.get_next_path_position()).normalized()
-	navigation.set_velocity(dir * Global.BASIC_SPEED * speed * delta)
+	var dir: Vector2 = to_local(navigation.get_next_path_position())
+	navigation.set_velocity(dir.normalized())
+	velocity *= Global.BASIC_SPEED * speed * delta
 	move_and_slide()
 
 func make_path() -> void:
