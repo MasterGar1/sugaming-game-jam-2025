@@ -2,8 +2,6 @@ extends CharacterBody2D
 class_name Entity
 
 @onready var projectile := preload('res://projectiles/projectile.tscn')
-
-## TODO: Implement damage
 @export var health: int:
 	get:
 		return health
@@ -16,7 +14,7 @@ class_name Entity
 	set(val):
 		attack = val
 
-@export var speed: int = 1:
+@export var speed: float = 1.0:
 	get:
 		return speed
 	set(val):
