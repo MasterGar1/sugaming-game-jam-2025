@@ -19,6 +19,8 @@ func make_path() -> void:
 ## TODO: Make it take damage
 func _on_hurtbox_entered(area: Hitbox) -> void:
 	take_damage(area)
+	print(health)
+	area.get_parent().expire()
 	die()
 
 func die() -> void:
