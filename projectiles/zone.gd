@@ -14,13 +14,12 @@ func set_timer(ls: int) -> void:
 	timer.start(ls)
 
 ## Creates zone at mouse location
-func setup(dmg: int, ls: int, player_position: Vector2, radius: int, lvl) -> void:
+func setup(dmg: int, ls: int, player_position: Vector2, radius: int, reduction: int) -> void:
 	set_timer(ls)
-	hitbox.collision.shape.radius = radius * lvl
+	hitbox.collision.shape.radius = radius
 	damage = dmg
 	position = player_position
-	level = lvl
-	speed_reduction = 2 * lvl
+	speed_reduction = reduction
 
 ## Kills the zone
 func expire() -> void:
@@ -30,9 +29,9 @@ func _on_timer_timeout() -> void:
 	expire()
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
-	if body is Enemy:
+	if body is Enemy or body is Projectile:
 		body.speed /= speed_reduction
 
 func _on_hitbox_body_exited(body: Node2D) -> void:
-	if body is Enemy:
+	if body is Enemy or body is Projectile:
 		body.speed *= speed_reduction
