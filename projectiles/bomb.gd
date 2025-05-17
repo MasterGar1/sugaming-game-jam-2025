@@ -9,7 +9,7 @@ extends Node
 func setup(dmg: int, start_position: Vector2) -> void:
 	self.global_position = start_position
 	damage = dmg
-	
+
 func _on_timer_timeout() -> void:
 	expire()
 
