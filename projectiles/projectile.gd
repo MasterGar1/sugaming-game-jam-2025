@@ -22,7 +22,7 @@ func setup(dmg: int, spd: int, dir: Vector2, life: int, pat: Callable = linear_f
 func _physics_process(delta: float) -> void:
 	check_despawn()
 	var next_pos: Vector2 = flight_pattern.call(direction)
-	velocity = next_pos * speed * delta
+	velocity = next_pos * speed * Global.BASIC_SPEED * delta
 	if move_and_slide(): expire()
 
 ## Kills the projectile

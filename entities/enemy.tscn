@@ -33,10 +33,11 @@ collision_mask = 4
 shape = SubResource("CapsuleShape2D_uvc0s")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-target_desired_distance = 80.0
 avoidance_enabled = true
-radius = 200.0
+radius = 70.0
+debug_enabled = true
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_entered"]
+[connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_velocity_computed"]
 
 [editable path="Hurtbox"]

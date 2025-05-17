@@ -3,7 +3,7 @@ extends Node2D
 @onready var player: Player = %Player
 @onready var tileset := $TileMapLayer
 
-const CHUNK_SIZE: Vector2 = Vector2.ONE * 32
+const CHUNK_SIZE: Vector2 = Vector2.ONE * 48
 const TILE_SIZE: int = 48
 var noise: FastNoiseLite = FastNoiseLite.new()
 
