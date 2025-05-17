@@ -45,7 +45,6 @@ rendering_quadrant_size = 32
 
 [node name="Player" parent="." instance=ExtResource("2_tcf2h")]
 unique_name_in_owner = true
-speed = 5
 
 [node name="EnemySpawner" type="Timer" parent="."]
 autostart = true

@@ -15,7 +15,11 @@ height = 166.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 z_index = 1
+collision_layer = 9
 script = ExtResource("1_merdl")
+attack = 10
+speed = 5.0
+reload = 0.2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_b0kkn")
@@ -46,7 +50,11 @@ script = ExtResource("3_e4p34")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 avoidance_enabled = true
+radius = 100.0
 debug_enabled = true
+
+[node name="AttackCooldown" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_entered"]
 

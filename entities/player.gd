@@ -3,6 +3,7 @@ class_name Player
 
 # Onready
 @onready var collision := $CollisionShape2D
+@onready var cooldown := $AttackCooldown
 
 # Vars
 var direction: Vector2
@@ -42,5 +43,7 @@ func die() -> void:
 		print("dead") # For testing purposes
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("shoot"):
+	if event.is_action_pressed("shoot") and cooldown.is_stopped():
 		shoot(get_global_mouse_position() - global_position)
+		cooldown.start(reload)
+		
