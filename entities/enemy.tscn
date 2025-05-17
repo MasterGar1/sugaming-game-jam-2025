@@ -20,6 +20,7 @@ height = 168.0
 z_index = 1
 collision_layer = 17
 script = ExtResource("1_p7g5j")
+health = 30
 speed = 2.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
