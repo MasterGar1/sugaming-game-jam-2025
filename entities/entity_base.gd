@@ -3,7 +3,6 @@ class_name Entity
 
 var projectile: Resource
 
-## TODO: Implement damage
 @export var health: int
 @export var attack: int
 @export var speed: float = 1.0

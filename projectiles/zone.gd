@@ -10,17 +10,17 @@ var level: int
 var speed_reduction: int
 
 ## Sets timer lifespan
-func set_timer(lifespan: int) -> void:
-	timer.start(lifespan)
+func set_timer(ls: int) -> void:
+	timer.start(ls)
 
 ## Creates zone at mouse location
-func setup(damage: int, lifespan: int, player_position: Vector2, radius: int, level) -> void:
-	set_timer(lifespan)
-	hitbox.collision.shape.radius = radius * level
-	self.damage = damage
+func setup(dmg: int, ls: int, player_position: Vector2, radius: int, lvl) -> void:
+	set_timer(ls)
+	hitbox.collision.shape.radius = radius * lvl
+	damage = dmg
 	position = player_position
-	self.level = level
-	speed_reduction = 2 * level
+	level = lvl
+	speed_reduction = 2 * lvl
 
 ## Kills the zone
 func expire() -> void:
