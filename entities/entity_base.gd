@@ -1,11 +1,30 @@
 extends CharacterBody2D
 class_name Entity
 
-## TODO: Make setgets and implement damage
-@export var health: int
-@export var attack: int
-@export var speed: int
-@export var reload: float
+## TODO: Implement damage
+@export var health: int:
+	get:
+		return health
+	set(val):
+		health = val
+
+@export var attack: int:
+	get:
+		return attack
+	set(val):
+		attack = val
+
+@export var speed: int:
+	get:
+		return speed
+	set(val):
+		speed = val
+
+@export var reload: float:
+	get:
+		return reload
+	set(val):
+		reload = val
 
 func take_damage(from_what: Hitbox) -> void:
-	pass
+	health -= from_what.damage

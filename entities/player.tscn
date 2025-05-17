@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bk5ewacumhgtj"]
+[gd_scene load_steps=7 format=3 uid="uid://bk5ewacumhgtj"]
 
 [ext_resource type="Script" uid="uid://dg5itiqsnv06l" path="res://entities/player.gd" id="1_merdl"]
 [ext_resource type="Texture2D" uid="uid://ndragblbgxr7" path="res://icon.svg" id="2_b0kkn"]
@@ -8,6 +8,10 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e4p34"]
 radius = 55.0
 height = 110.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rfe5m"]
+radius = 78.0
+height = 166.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 z_index = 1
@@ -25,6 +29,9 @@ debug_color = Color(0.511749, 0.4231, 0.99866, 0.42)
 [node name="Hurtbox" parent="." instance=ExtResource("3_rfe5m")]
 collision_layer = 2
 
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+shape = SubResource("CapsuleShape2D_rfe5m")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
@@ -38,3 +45,5 @@ script = ExtResource("3_e4p34")
 [node name="Skills" type="Node" parent="."]
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_entered"]
+
+[editable path="Hurtbox"]
