@@ -3,14 +3,12 @@ class_name Entity
 
 var projectile: Resource
 
-## TODO: Implement damage
 @export var health: int
 @export var attack: int
 @export var speed: float = 1.0
 @export var reload: float = 0.5
 @export var projectile_speed: int = 10
 @export var projectile_lifespan: int = 1000
-
 
 func take_damage(from_what: Hitbox) -> void:
 	health -= from_what.damage

@@ -7,42 +7,39 @@ class_name Enemy
 
 @export var proj: PackedScene = preload('res://projectiles/enemy_projectile.tscn')
 @export var score: int = 100
+@export var avoidance_range: float = 120.0
 
 var can_see_player: bool = false
 
 func _ready() -> void:
 	projectile = proj
+	navigation.target_desired_distance = avoidance_range
 
 func _process(_delta: float) -> void:
 	if can_see_player and cooldown.is_stopped():
 		call_deferred('shoot', to_local(player.global_position))
 		cooldown.start(reload)
-		get_global_mouse_position()
 
 func _physics_process(delta: float) -> void:
 	follow_player(delta)
 
 func follow_player(delta: float) -> void:
-	make_path()
-	var dir: Vector2 = to_local(navigation.get_next_path_position())
-	navigation.set_velocity(dir.normalized())
-	velocity *= Global.BASIC_SPEED * speed * delta
-	move_and_slide()
-
-func make_path() -> void:
 	navigation.target_position = player.global_position
-
-## TODO: Make it take damage
-func _on_hurtbox_entered(area: Hitbox) -> void:
-	take_damage(area)
-	if area.get_parent() is Projectile:
-		area.get_parent().expire()
-	die()
+	var dir: Vector2 = to_local(navigation.get_next_path_position())
+	navigation.set_velocity(dir.normalized() * Global.BASIC_SPEED * delta)
+	velocity *= speed
+	move_and_slide()
 
 func die() -> void:
 	if health <= 0:
 		Global.score += score
 		queue_free()
+
+func _on_hurtbox_entered(area: Hitbox) -> void:
+	take_damage(area)
+	if area.get_parent() is Projectile:
+		area.get_parent().expire()
+	die()
 
 func _on_navigation_velocity_computed(safe_velocity: Vector2) -> void:
 	velocity = safe_velocity
