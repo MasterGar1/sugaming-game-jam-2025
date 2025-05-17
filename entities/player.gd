@@ -16,6 +16,7 @@ func _physics_process(delta: float) -> void:
 func _on_hurtbox_entered(area: Area2D) -> void:
 	take_damage(area)
 	print(health)
+	die()
 
 ## WARNING: DON'T JUST queue_free()
 func die() -> void:
