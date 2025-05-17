@@ -32,7 +32,7 @@ func expire() -> void:
 ## Checks if the lifespan of projectile is reached
 func check_despawn() -> void:
 	if lifespan < global_position.distance_squared_to(start_position):
-		pass
+		expire()
 
 ## Basic linear flight pattern
 static func linear_flight(dir: Vector2) -> Vector2:
