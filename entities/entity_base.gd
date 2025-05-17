@@ -1,7 +1,6 @@
 extends CharacterBody2D
 class_name Entity
 
-## TODO: Implement damage
 @export var health: int:
 	get:
 		return health
@@ -14,7 +13,7 @@ class_name Entity
 	set(val):
 		attack = val
 
-@export var speed: int:
+@export var speed: float:
 	get:
 		return speed
 	set(val):

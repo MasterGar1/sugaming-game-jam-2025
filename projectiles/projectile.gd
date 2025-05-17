@@ -8,6 +8,7 @@ class_name Projectile
 @export var direction: Vector2
 @export var flight_pattern: Callable ## Has to return the next point of flight
 @export var lifespan: int
+
 var start_position: Vector2
 
 ## Used to initialize a projectile with given stats
@@ -32,7 +33,7 @@ func expire() -> void:
 ## Checks if the lifespan of projectile is reached
 func check_despawn() -> void:
 	if lifespan < global_position.distance_squared_to(start_position):
-		pass
+		expire()
 
 ## Basic linear flight pattern
 static func linear_flight(dir: Vector2) -> Vector2:

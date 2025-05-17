@@ -25,20 +25,20 @@ navigation_polygon = SubResource("NavigationPolygon_4717r")
 
 [node name="Player" parent="." instance=ExtResource("2_tcf2h")]
 unique_name_in_owner = true
-speed = 5
+speed = 5.0
 
 [node name="Enemy" parent="." instance=ExtResource("3_4717r")]
 position = Vector2(754, 399)
-speed = 1
+speed = 1.0
 
 [node name="Enemy2" parent="." instance=ExtResource("3_4717r")]
 position = Vector2(-872, 591)
-speed = 1
+speed = 1.0
 
 [node name="Enemy3" parent="." instance=ExtResource("3_4717r")]
 position = Vector2(-468, 985)
-speed = 1
+speed = 1.0
 
 [node name="Enemy4" parent="." instance=ExtResource("3_4717r")]
 position = Vector2(483, 1266)
-speed = 1
+speed = 1.0

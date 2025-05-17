@@ -30,6 +30,7 @@ func _physics_process(delta: float) -> void:
 func _on_hurtbox_entered(area: Area2D) -> void:
 	take_damage(area)
 	print(health)
+	die()
 	
 func apply_force(dir: Vector2, duration: float) -> void:
 	direction = dir
@@ -50,4 +51,4 @@ func shoot() -> void:
 	var nd: Projectile = projectile.instantiate()
 	nd.global_position = self.global_position
 	get_tree().current_scene.add_child(nd)
-	nd.setup(10, 100000, get_global_mouse_position() - global_position, 10) # Default values
+	nd.setup(10, 100000, get_global_mouse_position() - global_position, 10000000) # Default values

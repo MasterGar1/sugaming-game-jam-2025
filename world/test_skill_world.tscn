@@ -12,14 +12,12 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(436.299, 810.233, -473.
 [node name="TestSkillWorld" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_ccgfq")]
-speed = 5
 
 [node name="Dash" parent="Player/Skills" index="0" instance=ExtResource("2_sotnn")]
 level = 3
 
 [node name="Enemy" parent="." instance=ExtResource("3_ps8fs")]
 position = Vector2(240, 197)
-speed = 1
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 scale = Vector2(-2.04676, -0.654133)
@@ -48,5 +46,8 @@ position = Vector2(788, 349)
 
 [editable path="Player"]
 [editable path="Player/Hurtbox"]
+<<<<<<< HEAD
 [editable path="Player/Skills/Dash"]
 [editable path="Player/Skills/Dash/Hitbox"]
+=======
+>>>>>>> player
