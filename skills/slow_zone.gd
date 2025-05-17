@@ -16,13 +16,16 @@ var duration: int:
 var reduction: int:
 	get: return base_reduction * level
 
+func _ready() -> void:
+	cooldown.wait_time = cooldown_time
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("zone"):
+		try_slow_zone()
+
 func try_slow_zone() -> void:
 	if cooldown.is_stopped():
 		cooldown.start()
 		var slow_zone := zone.instantiate()
 		get_tree().current_scene.add_child(slow_zone)
 		slow_zone.setup(damage, duration, actor.global_position, radius, reduction)
-
-func _input(event):
-	if event.is_action_pressed("zone"):
-		try_slow_zone()

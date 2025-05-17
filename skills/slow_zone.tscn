@@ -6,10 +6,11 @@
 [node name="SlowZone" type="Node2D"]
 script = ExtResource("1_kg3xl")
 skill_name = "Temporal Prison"
+cooldown_time = 15.0
 image = ExtResource("2_dyfil")
 
 [node name="Cooldown" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 15.0
 one_shot = true
 
 [connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]

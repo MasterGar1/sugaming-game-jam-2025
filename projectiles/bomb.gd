@@ -17,7 +17,7 @@ func setup(dmg: int, start_position: Vector2, ls: int, rd: int) -> void:
 	damage = dmg
 	lifespan = ls
 	shape.shape.radius = rd
-	damage_burn = floor(damage / 2)
+	damage_burn = floor(damage / 2.0)
 	damage_base = damage
 	cooldown.start(lifespan)
 
