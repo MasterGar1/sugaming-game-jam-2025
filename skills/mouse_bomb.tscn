@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://byfqnqtg3tgr7"]
 
-[ext_resource type="Script" path="res://skills/mouse_bomb.gd" id="1_r4j6w"]
+[ext_resource type="Script" uid="uid://c0veliiaywbjs" path="res://skills/mouse_bomb.gd" id="1_r4j6w"]
 [ext_resource type="Texture2D" uid="uid://c855ke3fgeonx" path="res://textures/bomb.png" id="2_yj0x1"]
 
 [node name="MouseBomb" type="Node2D"]

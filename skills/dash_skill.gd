@@ -37,11 +37,10 @@ func level_up():
 	cooldown.stop()
 
 func _ready():
-	print(count)
 	cooldown.timeout.connect(reload)
 	actor.end_movement_lock.connect(end_dash)
 	collider.disabled = true
 
 func _input(event):
-	if event is InputEventKey and event.pressed and event.keycode == KEY_SHIFT:
+	if event.is_action_pressed("dash"):
 		try_dash()
