@@ -4,7 +4,7 @@ extends Node2D
 @onready var tileset := $TileMapLayer
 
 const CHUNK_SIZE: Vector2 = Vector2.ONE * 32
-const TILE_SIZE: int = 32
+const TILE_SIZE: int = 48
 var noise: FastNoiseLite = FastNoiseLite.new()
 
 func _physics_process(_delta: float) -> void:
@@ -15,14 +15,9 @@ func generate_chunk(pivot: Vector2) -> void:
 	var ns: float
 	for x in range(CHUNK_SIZE.x):
 		for y in range(CHUNK_SIZE.y):
-			coords = pivot / TILE_SIZE + Vector2(x, y) - CHUNK_SIZE / 2
+			coords = floor(pivot / TILE_SIZE) + Vector2(x, y) - CHUNK_SIZE / 2
 			ns = noise.get_noise_2dv(coords)
-			print(ns)
-			if ns < 0.5:
+			if ns < 0.05:
 				tileset.set_cell(coords, 0, Vector2.ZERO)
-			elif ns < 0.7:
-				tileset.set_cell(coords, 1, Vector2.ZERO)
-			elif ns < 0.85:
-				tileset.set_cell(coords, 2, Vector2.ZERO)
 			else:
-				tileset.set_cell(coords, 3, Vector2.ZERO)
+				tileset.set_cell(coords, 1, Vector2.ZERO)
