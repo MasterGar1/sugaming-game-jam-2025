@@ -16,7 +16,7 @@ class_name Entity
 	set(val):
 		attack = val
 
-@export var speed: int:
+@export var speed: int = 1:
 	get:
 		return speed
 	set(val):
@@ -33,6 +33,6 @@ func take_damage(from_what: Hitbox) -> void:
 
 func shoot(dir: Vector2) -> void:
 	var nd: Projectile = projectile.instantiate()
-	nd.global_position = self.global_position
+	nd.global_position = self.global_position + Vector2.ONE.rotated(randf_range(0, 2 * PI)) * 30
 	get_tree().current_scene.add_child(nd)
 	nd.setup(10, 10, dir, 1000000)
