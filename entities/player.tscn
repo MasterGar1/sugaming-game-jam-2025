@@ -17,6 +17,9 @@ height = 166.0
 z_index = 1
 collision_layer = 9
 script = ExtResource("1_merdl")
+attack = 10
+speed = 5.0
+reload = 0.2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_b0kkn")
@@ -28,7 +31,7 @@ shape = SubResource("CapsuleShape2D_e4p34")
 debug_color = Color(0.511749, 0.4231, 0.99866, 0.42)
 
 [node name="Hurtbox" parent="." instance=ExtResource("3_rfe5m")]
-collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 shape = SubResource("CapsuleShape2D_rfe5m")
@@ -47,7 +50,11 @@ script = ExtResource("3_e4p34")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 avoidance_enabled = true
+radius = 100.0
 debug_enabled = true
+
+[node name="AttackCooldown" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_entered"]
 
