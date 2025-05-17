@@ -9,6 +9,7 @@ height = 152.0
 
 [node name="Dash" type="Node2D"]
 script = ExtResource("1_a03v1")
+skill_name = "Devil Dash"
 
 [node name="Cooldown" type="Timer" parent="."]
 wait_time = 5.0
