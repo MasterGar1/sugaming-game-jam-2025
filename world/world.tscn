@@ -61,10 +61,6 @@ skills = Array[PackedScene]([ExtResource("5_mmdvd"), ExtResource("7_sc4t8"), Ext
 
 [node name="VBoxContainer" parent="SkillSystem/CanvasLayer/CenterContainer/SkillSacrifice" index="0"]
 layout_mode = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 1476.0
-offset_bottom = 402.0
 
 [connection signal="timeout" from="EnemySpawner" to="." method="_on_enemy_spawner_timeout"]
 
