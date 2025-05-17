@@ -2,7 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://c24e0ccpyff82" path="res://projectiles/projectile.tscn" id="1_hi54q"]
 
-[node name="Projectile" instance=ExtResource("1_hi54q")]
+[node name="EnemyProjectle" instance=ExtResource("1_hi54q")]
+collision_layer = 17
 
 [node name="Hitbox" parent="." index="0"]
 collision_layer = 2

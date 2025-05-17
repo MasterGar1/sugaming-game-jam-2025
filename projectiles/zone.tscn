@@ -7,10 +7,9 @@
 
 [node name="Zone" type="Node2D"]
 script = ExtResource("1_7ctg5")
-damage = null
-lifespan = null
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
 
 [node name="Hitbox" parent="." instance=ExtResource("3_i10ao")]
 collision_layer = 0
