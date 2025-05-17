@@ -1,11 +1,35 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2p8ovrjf8r5y"]
+[gd_scene load_steps=5 format=3 uid="uid://d2p8ovrjf8r5y"]
 
 [ext_resource type="Script" uid="uid://3810ju0dfdtb" path="res://world/world.gd" id="1_6xmxd"]
 [ext_resource type="PackedScene" uid="uid://bk5ewacumhgtj" path="res://entities/player.tscn" id="2_tcf2h"]
+[ext_resource type="PackedScene" uid="uid://dugqfgqtqrbkt" path="res://entities/enemy.tscn" id="3_4717r"]
+
+[sub_resource type="TileSet" id="TileSet_4717r"]
 
 [node name="World" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_6xmxd")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_4717r")
+format = 2
 
 [node name="Player" parent="." instance=ExtResource("2_tcf2h")]
 unique_name_in_owner = true
 speed = 50000
+
+[node name="Enemy" parent="." instance=ExtResource("3_4717r")]
+position = Vector2(754, 399)
+speed = 10000
+
+[node name="Enemy2" parent="." instance=ExtResource("3_4717r")]
+position = Vector2(-872, 591)
+speed = 10000
+
+[node name="Enemy3" parent="." instance=ExtResource("3_4717r")]
+position = Vector2(-468, 985)
+speed = 10000
+
+[node name="Enemy4" parent="." instance=ExtResource("3_4717r")]
+position = Vector2(483, 1266)
+speed = 10000
