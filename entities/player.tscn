@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dg5itiqsnv06l" path="res://entities/player.gd" id="1_merdl"]
 [ext_resource type="Texture2D" uid="uid://ndragblbgxr7" path="res://icon.svg" id="2_b0kkn"]
-[ext_resource type="Script" uid="uid://cmdwsf44r87jy" path="res://utility/camera.gd" id="3_e4p34"]
-[ext_resource type="PackedScene" uid="uid://sodkubjdowjx" path="res://components/hitbox.tscn" id="3_rfe5m"]
+[ext_resource type="Script" uid="uid://cmdwsf44r87jy" path="res://components/camera.gd" id="3_e4p34"]
+[ext_resource type="PackedScene" uid="uid://sodkubjdowjx" path="res://components/hurtbox.tscn" id="3_rfe5m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e4p34"]
 radius = 55.0
@@ -22,7 +22,8 @@ rotation = -1.57079
 shape = SubResource("CapsuleShape2D_e4p34")
 debug_color = Color(0.511749, 0.4231, 0.99866, 0.42)
 
-[node name="Hitbox" parent="." instance=ExtResource("3_rfe5m")]
+[node name="Hurtbox" parent="." instance=ExtResource("3_rfe5m")]
+collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
 drag_horizontal_enabled = true
@@ -33,3 +34,5 @@ drag_right_margin = 0.3
 drag_bottom_margin = 0.3
 editor_draw_drag_margin = true
 script = ExtResource("3_e4p34")
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_entered"]

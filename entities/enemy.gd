@@ -8,11 +8,20 @@ func _physics_process(delta: float) -> void:
 	follow_player(delta)
 
 func follow_player(delta: float) -> void:
-	var dir: Vector2 = to_local(navigation.get_next_path_position())
-	velocity = dir.normalized() * speed * delta
-	move_and_slide()
 	make_path()
+	var dir: Vector2 = to_local(navigation.get_next_path_position())
+	velocity = dir.normalized() * Global.BASIC_SPEED * speed * delta
+	move_and_slide()
 
 func make_path() -> void:
 	navigation.target_position = player.global_position
-	
+
+## TODO: Make it take damage
+func _on_hurtbox_entered(area: Hitbox) -> void:
+	take_damage(area)
+	die()
+
+func die() -> void:
+	if health <= 0:
+		## TODO: Other death stuff
+		queue_free()

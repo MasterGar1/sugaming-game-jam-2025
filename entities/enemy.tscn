@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dugqfgqtqrbkt"]
+[gd_scene load_steps=5 format=3 uid="uid://dugqfgqtqrbkt"]
 
 [ext_resource type="Script" uid="uid://8kstkay7anl5" path="res://entities/enemy.gd" id="1_p7g5j"]
 [ext_resource type="Texture2D" uid="uid://ndragblbgxr7" path="res://icon.svg" id="2_pqhw6"]
+[ext_resource type="PackedScene" uid="uid://sodkubjdowjx" path="res://components/hurtbox.tscn" id="3_b4nis"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b4nis"]
 radius = 58.0
@@ -21,7 +22,12 @@ rotation = -1.57079
 shape = SubResource("CapsuleShape2D_b4nis")
 debug_color = Color(0.389365, 0.476674, 0.987177, 0.42)
 
+[node name="Hurtbox" parent="." instance=ExtResource("3_b4nis")]
+collision_layer = 4
+
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 target_desired_distance = 80.0
 avoidance_enabled = true
 radius = 200.0
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_entered"]

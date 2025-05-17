@@ -1,10 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2p8ovrjf8r5y"]
+[gd_scene load_steps=6 format=3 uid="uid://d2p8ovrjf8r5y"]
 
 [ext_resource type="Script" uid="uid://3810ju0dfdtb" path="res://world/world.gd" id="1_6xmxd"]
 [ext_resource type="PackedScene" uid="uid://bk5ewacumhgtj" path="res://entities/player.tscn" id="2_tcf2h"]
 [ext_resource type="PackedScene" uid="uid://dugqfgqtqrbkt" path="res://entities/enemy.tscn" id="3_4717r"]
 
 [sub_resource type="TileSet" id="TileSet_4717r"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_4717r"]
+vertices = PackedVector2Array(33349.3, -12055.7, 30723.7, 22227.8, -28987.2, 21234.2, -29696.8, -16528.3)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-29707, -16539, 33360, -12065, 30733, 22238, -28997, 21244)])
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
@@ -14,22 +19,26 @@ script = ExtResource("1_6xmxd")
 tile_set = SubResource("TileSet_4717r")
 format = 2
 
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_4717r")
+
 [node name="Player" parent="." instance=ExtResource("2_tcf2h")]
 unique_name_in_owner = true
-speed = 50000
+speed = 5
 
 [node name="Enemy" parent="." instance=ExtResource("3_4717r")]
 position = Vector2(754, 399)
-speed = 10000
+speed = 1
 
 [node name="Enemy2" parent="." instance=ExtResource("3_4717r")]
 position = Vector2(-872, 591)
-speed = 10000
+speed = 1
 
 [node name="Enemy3" parent="." instance=ExtResource("3_4717r")]
 position = Vector2(-468, 985)
-speed = 10000
+speed = 1
 
 [node name="Enemy4" parent="." instance=ExtResource("3_4717r")]
 position = Vector2(483, 1266)
-speed = 10000
+speed = 1

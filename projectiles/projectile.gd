@@ -10,7 +10,7 @@ var start_position: Vector2
 
 ## TEST: Only for testing
 func _ready() -> void:
-	setup(10, 1000, Vector2.RIGHT, 100000)
+	setup(10, 1000, Vector2.RIGHT, 10)
 
 ## Used to initialize a projectile with given stats
 func setup(dmg: int, spd: int, dir: Vector2, life: int, pat: Callable = linear_flight) -> void:
@@ -24,7 +24,7 @@ func setup(dmg: int, spd: int, dir: Vector2, life: int, pat: Callable = linear_f
 func _physics_process(delta: float) -> void:
 	check_despawn()
 	var next_pos: Vector2 = flight_pattern.call(direction)
-	global_position += lerp(Vector2.ZERO, next_pos, 0.1 * delta * speed)
+	global_position += lerp(Vector2.ZERO, next_pos, 0.1 * delta * Global.BASIC_SPEED)
 
 ## Checks if the lifespan of projectile is reached
 func check_despawn() -> void:
