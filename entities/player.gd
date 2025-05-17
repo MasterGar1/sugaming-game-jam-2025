@@ -3,11 +3,14 @@ class_name Player
 
 # Onready
 @onready var projectile := preload('res://projectiles/projectile.tscn')
+@onready var collision := $CollisionShape2D
 
 # Vars
 var direction: Vector2
 var movement_locked: bool = false
 var force_duration: float
+
+signal end_movement_lock()
 
 func _physics_process(delta: float) -> void:
 	if not movement_locked:
@@ -21,6 +24,7 @@ func _physics_process(delta: float) -> void:
 		
 		if force_duration == 0:
 			movement_locked = false
+			end_movement_lock.emit()
 
 ## TODO: Make it take damage
 func _on_hurtbox_entered(area: Area2D) -> void:

@@ -1,10 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://bh4jxfh6r81ge"]
+[gd_scene load_steps=4 format=3 uid="uid://dwbgxlb2lm8cy"]
 
 [ext_resource type="Script" uid="uid://buxkn1slkd4e1" path="res://skills/dash_skill.gd" id="1_a03v1"]
+[ext_resource type="PackedScene" uid="uid://c8ljwvtcmk328" path="res://components/hitbox.tscn" id="2_udjjx"]
 
-[node name="Dash" type="Node"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6nnse"]
+radius = 76.0
+height = 152.0
+
+[node name="Dash" type="Node2D"]
 script = ExtResource("1_a03v1")
 
 [node name="Cooldown" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
+
+[node name="Hitbox" parent="." instance=ExtResource("2_udjjx")]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+shape = SubResource("CapsuleShape2D_6nnse")
+disabled = true
+
+[editable path="Hitbox"]

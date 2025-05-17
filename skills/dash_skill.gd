@@ -1,6 +1,7 @@
 extends Skill
 
 @onready var cooldown := $Cooldown
+@onready var collider := $Hitbox/CollisionShape2D
 @onready var actor = get_parent().get_parent()
 
 @export var base_duration: float = 20
@@ -8,6 +9,7 @@ extends Skill
 
 var count: int = 1
 var duration: float = base_duration
+var damage: int = 5
 
 func try_dash() -> void:
 	var direction = Input.get_vector("left", "right", "up", "down") * 20
@@ -17,6 +19,8 @@ func try_dash() -> void:
 		
 	count -= 1
 	cooldown.start()
+	actor.collision.disabled = true
+	collider.disabled = false
 	
 	actor.apply_force(direction, base_duration)
 		
@@ -25,9 +29,15 @@ func reload():
 	
 	if count < level:
 		cooldown.start()
+		
+func end_dash():
+	actor.collision.disabled = false
+	collider.disabled = true
 
 func _ready():
 	cooldown.timeout.connect(reload)
+	actor.end_movement_lock.connect(end_dash)
+	collider.disabled = true
 
 func _input(event):
 	if event is InputEventKey and event.pressed and event.keycode == KEY_SHIFT:
