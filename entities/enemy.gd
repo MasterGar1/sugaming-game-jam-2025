@@ -33,6 +33,7 @@ func follow_player(delta: float) -> void:
 func die() -> void:
 	if health <= 0:
 		Global.score += score
+		Global.display_number(score, position)
 		queue_free()
 
 func _on_hurtbox_entered(area: Hitbox) -> void:
