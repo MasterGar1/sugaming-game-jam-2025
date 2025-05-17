@@ -27,5 +27,4 @@ class_name Entity
 		reload = val
 
 func take_damage(from_what: Hitbox) -> void:
-	
-	pass
+	health -= from_what.damage

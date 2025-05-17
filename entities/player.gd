@@ -19,13 +19,14 @@ func _on_hurtbox_entered(area: Area2D) -> void:
 	
 ## WARNING: DON'T JUST queue_free()
 func die() -> void:
-	pass
+	if health < 0:
+		pass
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("shoot"):
 		shoot()
 
-#Shoots projectile from the player's position towards where they are facing
+# Shoots projectile from the player's position towards where they are facing
 func shoot() -> void:
 	var nd: Projectile = projectile.instantiate()
 	nd.global_position = self.global_position
