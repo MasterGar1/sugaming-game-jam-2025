@@ -2,7 +2,6 @@ extends Entity
 class_name Player
 
 # Onready
-@onready var projectile := preload('res://projectiles/projectile.tscn')
 @onready var collision := $CollisionShape2D
 
 # Vars

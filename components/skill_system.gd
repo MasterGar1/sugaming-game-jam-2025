@@ -1,8 +1,8 @@
 extends Node
 
 @onready var timer := $Timer
-@onready var popup := $PopupPanel
-@onready var buttons_grid := $PopupPanel/VBoxContainer/GridContainer
+@onready var popup := $CanvasLayer/CenterContainer/SkillSacrifice
+@onready var buttons_grid := $CanvasLayer/CenterContainer/SkillSacrifice/VBoxContainer/GridContainer
 @onready var player_skills: Node = player.get_node("Skills")
 
 @export var player: Player
@@ -24,7 +24,7 @@ func sacrifice_skill() -> void:
 		buttons_grid.add_child(button)
 		button.pressed.connect(end_sacrifice.bind(i))
 		
-	popup.popup_centered()
+	popup.show()
 	get_tree().paused = true
 
 func end_sacrifice(id: int) -> void:

@@ -30,6 +30,11 @@ func reload():
 func end_dash():
 	actor.collision.disabled = false
 	collider.disabled = true
+	
+func level_up():
+	super()
+	reload()
+	cooldown.stop()
 
 func _ready():
 	print(count)

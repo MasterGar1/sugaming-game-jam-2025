@@ -1,9 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://ro7sit31c68a"]
+[gd_scene load_steps=2 format=3 uid="uid://qwgvx1anpjyw"]
 
 [ext_resource type="Script" uid="uid://cdxitdlb7cj7x" path="res://skills/slow_zone.gd" id="1_kg3xl"]
 
 [node name="SlowZone" type="Node2D"]
 script = ExtResource("1_kg3xl")
+skill_name = "Slow zone"
 
 [node name="Cooldown" type="Timer" parent="."]
 wait_time = 10.0

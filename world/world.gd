@@ -10,7 +10,7 @@ extends Node2D
 const CHUNK_SIZE: Vector2 = Vector2.ONE * 48
 const TILE_SIZE: int = 48
 const SPAWN_DISTANCE: int = 48
-const ENEMY_CAP: int = 20
+const ENEMY_CAP: int = 2
 var noise: FastNoiseLite = FastNoiseLite.new()
 
 func _physics_process(_delta: float) -> void:
