@@ -1,4 +1,5 @@
-extends Node2D
+extends Skill
+class_name MouseBomb
 
 @onready var cooldown := $Timer
 @onready var bomb := preload("res://projectiles/bomb.tscn")
