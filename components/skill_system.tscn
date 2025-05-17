@@ -11,7 +11,7 @@ script = ExtResource("1_bs6qn")
 skill_button = ExtResource("2_p10cc")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 20.0
 autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
