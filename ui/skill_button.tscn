@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbfchewd2pf3v"]
+
+[ext_resource type="Texture2D" uid="uid://c855ke3fgeonx" path="res://textures/bomb.png" id="1_o8opt"]
+
+[node name="SkillButton" type="Button"]
+custom_minimum_size = Vector2(120, 120)
+size_flags_vertical = 4
+focus_mode = 0
+icon = ExtResource("1_o8opt")
+flat = true
+icon_alignment = 1
+expand_icon = true

@@ -1,10 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://qwgvx1anpjyw"]
+[gd_scene load_steps=3 format=3 uid="uid://qwgvx1anpjyw"]
 
 [ext_resource type="Script" uid="uid://cdxitdlb7cj7x" path="res://skills/slow_zone.gd" id="1_kg3xl"]
+[ext_resource type="Texture2D" uid="uid://dkmbgtjvmt126" path="res://textures/slowzone.png" id="2_dyfil"]
 
 [node name="SlowZone" type="Node2D"]
 script = ExtResource("1_kg3xl")
-skill_name = "Slow zone"
+skill_name = "Temporal Prison"
+image = ExtResource("2_dyfil")
 
 [node name="Cooldown" type="Timer" parent="."]
 wait_time = 10.0

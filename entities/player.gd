@@ -4,6 +4,7 @@ class_name Player
 # Onready
 @onready var collision := $CollisionShape2D
 @onready var cooldown := $AttackCooldown
+@onready var skill_holder := $Skills
 
 @export var skills: Array[PackedScene]
 # Vars

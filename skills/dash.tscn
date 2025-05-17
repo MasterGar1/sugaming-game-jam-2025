@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dgjub60ktjfq7"]
+[gd_scene load_steps=5 format=3 uid="uid://dgjub60ktjfq7"]
 
 [ext_resource type="Script" uid="uid://buxkn1slkd4e1" path="res://skills/dash_skill.gd" id="1_a03v1"]
+[ext_resource type="Texture2D" uid="uid://cgkcn0bbq15rc" path="res://textures/dash.png" id="2_6nnse"]
 [ext_resource type="PackedScene" uid="uid://c8ljwvtcmk328" path="res://components/hitbox.tscn" id="2_udjjx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6nnse"]
@@ -10,6 +11,7 @@ height = 152.0
 [node name="Dash" type="Node2D"]
 script = ExtResource("1_a03v1")
 skill_name = "Devil Dash"
+image = ExtResource("2_6nnse")
 
 [node name="Cooldown" type="Timer" parent="."]
 wait_time = 5.0
