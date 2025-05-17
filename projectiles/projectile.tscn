@@ -12,6 +12,7 @@ height = 178.0
 radius = 46.0977
 
 [node name="Projectile" type="CharacterBody2D"]
+z_index = 1
 script = ExtResource("1_wrf7x")
 
 [node name="Hitbox" parent="." instance=ExtResource("2_7nr1q")]
