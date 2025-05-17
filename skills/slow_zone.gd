@@ -9,7 +9,6 @@ class_name SlowZone
 var damage: int = 0
 var radius = 200
 var duration: float = base_duration
-var skill_level: int = 2
 
 func try_slow_zone() -> void:
 	if cooldown.is_stopped():
@@ -17,7 +16,7 @@ func try_slow_zone() -> void:
 	
 		var slow_zone := zone.instantiate()
 		get_tree().current_scene.add_child(slow_zone)
-		slow_zone.setup(damage, duration, actor.global_position, radius, skill_level)
+		slow_zone.setup(damage, duration, actor.global_position, radius, level)
 
 func _input(event):
 	if event is InputEventKey and event.pressed and event.keycode == KEY_C:

@@ -45,11 +45,8 @@ editor_draw_drag_margin = true
 script = ExtResource("3_e4p34")
 
 [node name="Skills" type="Node2D" parent="."]
-<<<<<<< HEAD
-=======
 
 [node name="SlowZone" parent="Skills" instance=ExtResource("5_qly61")]
->>>>>>> player
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_entered"]
 
