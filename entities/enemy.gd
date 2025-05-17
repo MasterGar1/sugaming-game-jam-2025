@@ -24,8 +24,9 @@ func _physics_process(delta: float) -> void:
 
 func follow_player(delta: float) -> void:
 	make_path()
-	var dir: Vector2 = to_local(navigation.get_next_path_position()).normalized()
-	navigation.set_velocity(dir * Global.BASIC_SPEED * speed * delta)
+	var dir: Vector2 = to_local(navigation.get_next_path_position())
+	navigation.set_velocity(dir.normalized())
+	velocity *= Global.BASIC_SPEED * speed * delta
 	move_and_slide()
 
 func make_path() -> void:
@@ -34,7 +35,8 @@ func make_path() -> void:
 ## TODO: Make it take damage
 func _on_hurtbox_entered(area: Hitbox) -> void:
 	take_damage(area)
-	area.get_parent().expire()
+	if area.get_parent() is Projectile:
+		area.get_parent().expire()
 	die()
 
 func die() -> void:

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://clehuuyb5frcj"]
+[gd_scene load_steps=6 format=3 uid="uid://mmvso6512jvq"]
 
 [ext_resource type="PackedScene" uid="uid://bk5ewacumhgtj" path="res://entities/player.tscn" id="1_ccgfq"]
-[ext_resource type="PackedScene" uid="uid://dwbgxlb2lm8cy" path="res://skills/dash.tscn" id="2_sotnn"]
+[ext_resource type="PackedScene" path="res://skills/dash.tscn" id="2_sotnn"]
+[ext_resource type="PackedScene" uid="uid://ro7sit31c68a" path="res://skills/slow_zone.tscn" id="3_dc1lj"]
 [ext_resource type="PackedScene" uid="uid://dugqfgqtqrbkt" path="res://entities/enemy.tscn" id="3_ps8fs"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ps8fs"]
@@ -11,15 +12,20 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(436.299, 810.233, -473.
 
 [node name="TestSkillWorld" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_ccgfq")]
-speed = 5
-
-[node name="Dash" parent="Player/Skills" index="0" instance=ExtResource("2_sotnn")]
+[node name="Player_Skills#Dash" parent="." instance=ExtResource("2_sotnn")]
 level = 3
+
+[node name="Player" parent="." instance=ExtResource("1_ccgfq")]
+speed = 5.0
+
+[node name="CollisionShape2D" parent="Player/Hurtbox" index="0"]
+shape = null
+
+[node name="SlowZone" parent="Player/Skills" index="1" instance=ExtResource("3_dc1lj")]
 
 [node name="Enemy" parent="." instance=ExtResource("3_ps8fs")]
 position = Vector2(240, 197)
-speed = 1
+speed = 1.0
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 scale = Vector2(-2.04676, -0.654133)
@@ -27,18 +33,15 @@ navigation_polygon = SubResource("NavigationPolygon_ps8fs")
 
 [node name="Enemy2" parent="." instance=ExtResource("3_ps8fs")]
 position = Vector2(-377, -225)
-speed = 1
 
 [node name="Enemy3" parent="." instance=ExtResource("3_ps8fs")]
 position = Vector2(-390, 298)
 
 [node name="Enemy4" parent="." instance=ExtResource("3_ps8fs")]
 position = Vector2(526, -227)
-speed = 1
 
 [node name="Enemy5" parent="." instance=ExtResource("3_ps8fs")]
 position = Vector2(-661, -411)
-speed = 1
 
 [node name="Enemy6" parent="." instance=ExtResource("3_ps8fs")]
 position = Vector2(-717, 398)
@@ -48,5 +51,3 @@ position = Vector2(788, 349)
 
 [editable path="Player"]
 [editable path="Player/Hurtbox"]
-[editable path="Player/Skills/Dash"]
-[editable path="Player/Skills/Dash/Hitbox"]

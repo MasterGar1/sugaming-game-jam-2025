@@ -31,7 +31,6 @@ func _physics_process(delta: float) -> void:
 
 func _on_hurtbox_entered(area: Area2D) -> void:
 	take_damage(area)
-	print('hello')
 	die()
 	
 func apply_force(dir: Vector2, duration: float) -> void:

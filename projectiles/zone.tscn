@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbhxijl7p1w03"]
+
+[ext_resource type="Script" uid="uid://bw50picenfgu2" path="res://projectiles/zone.gd" id="1_7ctg5"]
+[ext_resource type="PackedScene" uid="uid://c8ljwvtcmk328" path="res://components/hitbox.tscn" id="3_i10ao"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i10ao"]
+
+[node name="Zone" type="Node2D"]
+script = ExtResource("1_7ctg5")
+damage = null
+lifespan = null
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Hitbox" parent="." instance=ExtResource("3_i10ao")]
+collision_layer = 0
+collision_mask = 16
+monitoring = true
+monitorable = false
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+shape = SubResource("CircleShape2D_i10ao")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_exited" from="Hitbox" to="." method="_on_hitbox_body_exited"]
+
+[editable path="Hitbox"]
