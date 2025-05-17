@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://swubrvxm3yfo"]
+[gd_scene load_steps=6 format=3 uid="uid://swubrvxm3yfo"]
 
 [ext_resource type="PackedScene" uid="uid://cxqey4neh32ye" path="res://ui/sacrifice_menu.tscn" id="1_3f2kh"]
 [ext_resource type="Script" uid="uid://ba0603xfgjxt5" path="res://ui/gui.gd" id="1_xlv5r"]
 [ext_resource type="Script" uid="uid://j0wkqyykxsh0" path="res://ui/overlay.gd" id="3_mcydh"]
 [ext_resource type="Texture2D" uid="uid://cq54vgvg30sxn" path="res://textures/rect.png" id="4_fr2ss"]
+[ext_resource type="PackedScene" uid="uid://cpjbw84u8eflx" path="res://ui/pause_menu.tscn" id="5_fr2ss"]
 
 [node name="GUI" type="CanvasLayer"]
 process_mode = 3
@@ -24,10 +25,10 @@ script = ExtResource("3_mcydh")
 
 [node name="SacrificeProgress" type="TextureProgressBar" parent="Overlay"]
 layout_mode = 0
-offset_left = 541.0
-offset_top = 26.0
-offset_right = 1194.0
-offset_bottom = 67.0
+offset_left = 586.0
+offset_top = 27.0
+offset_right = 1239.0
+offset_bottom = 68.0
 step = 0.001
 nine_patch_stretch = true
 texture_under = ExtResource("4_fr2ss")
@@ -79,3 +80,7 @@ offset_top = 744.0
 offset_right = 694.0
 offset_bottom = 879.0
 alignment = 1
+
+[node name="PauseMenu" parent="." instance=ExtResource("5_fr2ss")]
+visible = false
+
