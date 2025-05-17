@@ -2,29 +2,10 @@ extends CharacterBody2D
 class_name Entity
 
 @onready var projectile := preload('res://projectiles/projectile.tscn')
-@export var health: int:
-	get:
-		return health
-	set(val):
-		health = val
-
-@export var attack: int:
-	get:
-		return attack
-	set(val):
-		attack = val
-
-@export var speed: float = 1.0:
-	get:
-		return speed
-	set(val):
-		speed = val
-
-@export var reload: float:
-	get:
-		return reload
-	set(val):
-		reload = val
+@export var health: int
+@export var attack: int
+@export var speed: float = 1.0
+@export var reload: float
 
 func take_damage(from_what: Hitbox) -> void:
 	health -= from_what.damage
