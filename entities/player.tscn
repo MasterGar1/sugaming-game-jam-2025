@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bk5ewacumhgtj"]
+[gd_scene load_steps=8 format=3 uid="uid://bk5ewacumhgtj"]
 
 [ext_resource type="Script" uid="uid://dg5itiqsnv06l" path="res://entities/player.gd" id="1_merdl"]
 [ext_resource type="Texture2D" uid="uid://ndragblbgxr7" path="res://icon.svg" id="2_b0kkn"]
 [ext_resource type="Script" uid="uid://cmdwsf44r87jy" path="res://components/camera.gd" id="3_e4p34"]
 [ext_resource type="PackedScene" uid="uid://sodkubjdowjx" path="res://components/hurtbox.tscn" id="3_rfe5m"]
+[ext_resource type="PackedScene" uid="uid://ro7sit31c68a" path="res://skills/slow_zone.tscn" id="5_qly61"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e4p34"]
 radius = 55.0
@@ -15,6 +16,7 @@ height = 166.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 z_index = 1
+collision_layer = 9
 script = ExtResource("1_merdl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -42,7 +44,9 @@ drag_bottom_margin = 0.3
 editor_draw_drag_margin = true
 script = ExtResource("3_e4p34")
 
-[node name="Skills" type="Node" parent="."]
+[node name="Skills" type="Node2D" parent="."]
+
+[node name="SlowZone" parent="Skills" instance=ExtResource("5_qly61")]
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_entered"]
 

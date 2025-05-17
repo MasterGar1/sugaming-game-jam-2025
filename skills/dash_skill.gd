@@ -1,7 +1,6 @@
 extends Skill
 
 @onready var cooldown := $Cooldown
-@onready var actor = get_parent().get_parent()
 
 @export var base_duration: float = 20
 @export var level: int = 1
@@ -14,12 +13,12 @@ func try_dash() -> void:
 	
 	if count <= 0 or direction.length() == 0:
 		return
-		
+	
 	count -= 1
 	cooldown.start()
 	
 	actor.apply_force(direction, base_duration)
-		
+
 func reload():
 	count = min(count + 1, level)
 	

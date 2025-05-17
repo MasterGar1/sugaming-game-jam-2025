@@ -14,7 +14,7 @@ class_name Entity
 	set(val):
 		attack = val
 
-@export var speed: int:
+@export var speed: float:
 	get:
 		return speed
 	set(val):

@@ -8,6 +8,7 @@ class_name Projectile
 @export var direction: Vector2
 @export var flight_pattern: Callable ## Has to return the next point of flight
 @export var lifespan: int
+
 var start_position: Vector2
 
 ## Used to initialize a projectile with given stats
