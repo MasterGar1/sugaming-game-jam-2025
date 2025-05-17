@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://swubrvxm3yfo"]
+
+[ext_resource type="PackedScene" uid="uid://cxqey4neh32ye" path="res://ui/sacrifice_menu.tscn" id="1_3f2kh"]
+[ext_resource type="Script" uid="uid://cmvlm3gc8m2f2" path="res://ui/sacrifice_menu.gd" id="2_xlv5r"]
+
+[node name="GUI" type="CanvasLayer"]
+
+[node name="Sacrifice" parent="." instance=ExtResource("1_3f2kh")]
+script = ExtResource("2_xlv5r")

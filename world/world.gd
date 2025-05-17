@@ -30,7 +30,7 @@ func generate_chunk(pivot: Vector2) -> void:
 
 func _on_enemy_spawner_timeout() -> void:
 	if $Enemies.get_child_count() > ENEMY_CAP: return
-	var en: Enemy= enemies.pick_random().instantiate()
+	var en: Enemy = enemies.pick_random().instantiate()
 	var pos: Vector2 =  Vector2.ONE.rotated(randf_range(0, 2 * PI)) * SPAWN_DISTANCE * TILE_SIZE
 	en.global_position = pos + player.global_position
 	$Enemies.add_child(en)
