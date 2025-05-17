@@ -11,6 +11,7 @@ height = 152.0
 [node name="Dash" type="Node2D"]
 script = ExtResource("1_a03v1")
 skill_name = "Devil Dash"
+cooldown_time = 8.0
 image = ExtResource("2_6nnse")
 
 [node name="Cooldown" type="Timer" parent="."]
@@ -24,5 +25,7 @@ collision_mask = 0
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
 shape = SubResource("CapsuleShape2D_6nnse")
 disabled = true
+
+[connection signal="timeout" from="Cooldown" to="." method="reload"]
 
 [editable path="Hitbox"]

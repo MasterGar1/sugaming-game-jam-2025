@@ -20,6 +20,7 @@ func skill_selected(sk) -> void:
 	
 	if skills.get_child_count() > 0:
 		timer.start(Global.BASE_LEVELUP_COOLDOWN)
+		get_parent().overlay.remove_skill(sk.skill_name)
 	else:
 		get_parent().overlay.remove_child(get_parent().overlay.get_child(0))
 
