@@ -11,7 +11,6 @@ var projectile: Resource
 @export var projectile_speed: int = 10
 @export var projectile_lifespan: int = 1000
 
-
 func take_damage(from_what: Hitbox) -> void:
 	health -= from_what.damage
 

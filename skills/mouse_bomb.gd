@@ -1,4 +1,4 @@
-extends Node2D
+extends Skill
 
 @onready var cooldown := $Timer
 @onready var bomb := preload("res://projectiles/bomb.tscn")
