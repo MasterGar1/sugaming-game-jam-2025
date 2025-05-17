@@ -1,16 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://dugqfgqtqrbkt"]
+[gd_scene load_steps=8 format=3 uid="uid://dugqfgqtqrbkt"]
 
 [ext_resource type="Script" uid="uid://8kstkay7anl5" path="res://entities/enemy.gd" id="1_p7g5j"]
 [ext_resource type="Texture2D" uid="uid://ndragblbgxr7" path="res://icon.svg" id="2_pqhw6"]
 [ext_resource type="PackedScene" uid="uid://sodkubjdowjx" path="res://components/hurtbox.tscn" id="3_b4nis"]
+[ext_resource type="PackedScene" uid="uid://c8ljwvtcmk328" path="res://components/hitbox.tscn" id="3_uvc0s"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b4nis"]
 radius = 58.0
 height = 116.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_uvc0s"]
+radius = 697.523
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uvc0s"]
-radius = 87.0
-height = 228.0
+radius = 65.0
+height = 168.0
 
 [node name="Enemy" type="CharacterBody2D"]
 z_index = 1
@@ -27,6 +31,17 @@ rotation = -1.57079
 shape = SubResource("CapsuleShape2D_b4nis")
 debug_color = Color(0.389365, 0.476674, 0.987177, 0.42)
 
+[node name="AttackArea" parent="." instance=ExtResource("3_b4nis")]
+show_behind_parent = true
+collision_mask = 8
+
+[node name="CollisionShape2D" parent="AttackArea" index="0"]
+show_behind_parent = true
+shape = SubResource("CircleShape2D_uvc0s")
+debug_color = Color(0.968627, 0.176471, 0, 0.203922)
+
+[node name="Hitbox" parent="." instance=ExtResource("3_uvc0s")]
+
 [node name="Hurtbox" parent="." instance=ExtResource("3_b4nis")]
 collision_mask = 4
 
@@ -37,11 +52,17 @@ shape = SubResource("CapsuleShape2D_uvc0s")
 simplify_path = true
 avoidance_enabled = true
 radius = 70.0
-neighbor_distance = 100.0
+neighbor_distance = 200.0
 avoidance_layers = 0
 debug_enabled = true
 
+[node name="AttackCooldown" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="AttackArea" to="." method="_on_attack_body_entered"]
+[connection signal="body_exited" from="AttackArea" to="." method="_on_attack_body_exited"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_entered"]
 [connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_velocity_computed"]
 
+[editable path="AttackArea"]
 [editable path="Hurtbox"]
