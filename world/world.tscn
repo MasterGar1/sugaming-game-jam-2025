@@ -1,44 +1,55 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2p8ovrjf8r5y"]
+[gd_scene load_steps=10 format=3 uid="uid://d2p8ovrjf8r5y"]
 
 [ext_resource type="Script" uid="uid://3810ju0dfdtb" path="res://world/world.gd" id="1_6xmxd"]
+[ext_resource type="Texture2D" uid="uid://pboayg3685r0" path="res://textures/Zombie-Tileset---_0077_Capa-78.png" id="2_sc4t8"]
 [ext_resource type="PackedScene" uid="uid://bk5ewacumhgtj" path="res://entities/player.tscn" id="2_tcf2h"]
-[ext_resource type="PackedScene" uid="uid://dugqfgqtqrbkt" path="res://entities/enemy.tscn" id="3_4717r"]
+[ext_resource type="Texture2D" uid="uid://cqmyoxs05fiee" path="res://textures/Zombie-Tileset---_0078_Capa-79.png" id="3_ai45w"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_mmdvd"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+agent_radius = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ov2xu"]
+resource_name = "Dark"
+texture = ExtResource("2_sc4t8")
+0:0/0 = 0
+0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_mmdvd")
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_fn3g3"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+agent_radius = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mad0u"]
+resource_name = "Light"
+texture = ExtResource("3_ai45w")
+0:0/0 = 0
+0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_fn3g3")
 
 [sub_resource type="TileSet" id="TileSet_4717r"]
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_4717r"]
-vertices = PackedVector2Array(33349.3, -12055.7, 30723.7, 22227.8, -28987.2, 21234.2, -29696.8, -16528.3)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-29707, -16539, 33360, -12065, 30733, 22238, -28997, 21244)])
+navigation_layer_0/layers = 1
+sources/0 = SubResource("TileSetAtlasSource_ov2xu")
+sources/1 = SubResource("TileSetAtlasSource_mad0u")
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_6xmxd")
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_4717r")
-format = 2
-
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-visible = false
-navigation_polygon = SubResource("NavigationPolygon_4717r")
+rendering_quadrant_size = 32
 
 [node name="Player" parent="." instance=ExtResource("2_tcf2h")]
 unique_name_in_owner = true
 speed = 5.0
 
-[node name="Enemy" parent="." instance=ExtResource("3_4717r")]
-position = Vector2(754, 399)
-speed = 1.0
+[node name="EnemySpawner" type="Timer" parent="."]
+autostart = true
 
-[node name="Enemy2" parent="." instance=ExtResource("3_4717r")]
-position = Vector2(-872, 591)
-speed = 1.0
+[node name="Enemies" type="Node2D" parent="."]
 
-[node name="Enemy3" parent="." instance=ExtResource("3_4717r")]
-position = Vector2(-468, 985)
-speed = 1.0
-
-[node name="Enemy4" parent="." instance=ExtResource("3_4717r")]
-position = Vector2(483, 1266)
-speed = 1.0
+[connection signal="timeout" from="EnemySpawner" to="." method="_on_enemy_spawner_timeout"]
