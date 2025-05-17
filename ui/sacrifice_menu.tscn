@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cmvlm3gc8m2f2" path="res://ui/sacrifice_menu.gd" id="1_kdwwj"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ptav"]
-bg_color = Color(0.496401, 0.645487, 0.703845, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_joun8"]
+bg_color = Color(0.376471, 0.4, 0.470588, 0.72549)
 border_width_left = 10
 border_width_top = 10
 border_width_right = 10
@@ -46,7 +46,7 @@ theme_override_constants/margin_bottom = 100
 
 [node name="Panel" type="Panel" parent="Margin"]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_2ptav")
+theme_override_styles/panel = SubResource("StyleBoxFlat_joun8")
 
 [node name="VBox" type="VBoxContainer" parent="Margin"]
 layout_mode = 2
@@ -55,8 +55,10 @@ alignment = 1
 [node name="Label" type="Label" parent="Margin/VBox"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "The time has come for you to choose what to sacrifice!
-Choose a skill to remove in order to power up your other experties!"
+theme_override_font_sizes/font_size = 40
+text = "The time has come for you to make a choice!
+Choose a skill to sacrifice for the power of 
+your other experties!"
 horizontal_alignment = 1
 
 [node name="HBox" type="HBoxContainer" parent="Margin/VBox"]
