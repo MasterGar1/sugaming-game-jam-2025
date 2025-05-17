@@ -19,7 +19,10 @@ func make_path() -> void:
 ## TODO: Make it take damage
 func _on_hurtbox_entered(area: Hitbox) -> void:
 	take_damage(area)
-	area.get_parent().expire()
+	
+	if area.get_parent() is Projectile:
+		area.get_parent().expire()
+		
 	die()
 
 func die() -> void:
