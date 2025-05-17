@@ -1,7 +1,6 @@
 extends CharacterBody2D
 class_name Entity
 
-## TODO: Implement damage
 @export var health: int:
 	get:
 		return health
