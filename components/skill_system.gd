@@ -16,7 +16,6 @@ func _ready() -> void:
 		player_skills.add_child(skill.instantiate())
 	
 func sacrifice_skill() -> void:
-	popup.popup_centered()
 	var current_skills = player_skills.get_children()
 	
 	for i in range(current_skills.size()):
@@ -24,6 +23,9 @@ func sacrifice_skill() -> void:
 		button.text = current_skills[i].skill_name
 		buttons_grid.add_child(button)
 		button.pressed.connect(end_sacrifice.bind(i))
+		
+	popup.popup_centered()
+	get_tree().paused = true
 
 func end_sacrifice(id: int) -> void:
 	player_skills.remove_child(player_skills.get_children()[id])
@@ -35,3 +37,4 @@ func end_sacrifice(id: int) -> void:
 		child.queue_free()
 		
 	popup.hide()
+	get_tree().paused = false
