@@ -3,6 +3,7 @@ class_name Entity
 
 var projectile: Resource
 
+@export var max_health: int
 @export var health: int
 @export var attack: int
 @export var speed: float = 1.0

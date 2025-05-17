@@ -22,7 +22,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("3_mcydh")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="Overlay"]
+[node name="SacrificeProgress" type="TextureProgressBar" parent="Overlay"]
 layout_mode = 0
 offset_left = 541.0
 offset_top = 26.0
@@ -36,3 +36,19 @@ texture_progress = ExtResource("4_fr2ss")
 tint_under = Color(0, 0, 0, 1)
 tint_over = Color(0.913725, 0.290196, 0.0666667, 0)
 tint_progress = Color(0.837563, 0.28887, 0.0397635, 1)
+
+[node name="Healthbar" type="TextureProgressBar" parent="Overlay"]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 60.0
+offset_right = 122.0
+offset_bottom = 364.0
+value = 100.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("4_fr2ss")
+texture_over = ExtResource("4_fr2ss")
+texture_progress = ExtResource("4_fr2ss")
+tint_under = Color(0, 0, 0, 1)
+tint_over = Color(1, 1, 1, 0)
+tint_progress = Color(0.592157, 0.121569, 0, 1)
