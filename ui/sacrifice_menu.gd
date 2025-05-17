@@ -8,11 +8,20 @@ func _ready() -> void:
 	timer.start(Global.BASE_LEVELUP_COOLDOWN)
 
 func skill_selected(sk) -> void:
-	get_tree().get_nodes_in_group("player")[0].skill_holder.remove_child(sk)
+	var skills = get_tree().get_nodes_in_group("player")[0].skill_holder
+	skills.remove_child(sk)
+	
+	for skill in skills.get_children():
+		skill.level_up()
+	
 	hide()
 	get_parent().pause()
 	remove_skills()
-	timer.start(Global.BASE_LEVELUP_COOLDOWN)
+	
+	if skills.get_child_count() > 0:
+		timer.start(Global.BASE_LEVELUP_COOLDOWN)
+	else:
+		get_parent().overlay.remove_child(get_parent().overlay.get_child(0))
 
 func add_skills() -> void:
 	for sk in get_tree().get_nodes_in_group("player")[0].skill_holder.get_children():

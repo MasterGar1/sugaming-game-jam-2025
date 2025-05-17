@@ -1,0 +1,81 @@
+[gd_scene load_steps=3 format=3 uid="uid://825i4t2o4pdk"]
+
+[sub_resource type="GDScript" id="GDScript_ayaya"]
+script/source = "extends Node
+
+@onready var timer := $Timer
+@onready var popup := $CanvasLayer/CenterContainer/SkillSacrifice
+@onready var buttons_grid := $CanvasLayer/CenterContainer/SkillSacrifice/VBoxContainer/GridContainer
+@onready var player_skills: Node = player.get_node(\"Skills\")
+
+@export var player: Player
+@export var skill_button: PackedScene
+
+func _ready() -> void:
+	timer.timeout.connect(sacrifice_skill)
+	
+func sacrifice_skill() -> void:
+	var current_skills = player_skills.get_children()
+	
+	for i in range(current_skills.size()):
+		var button = skill_button.instantiate()
+		button.text = current_skills[i].skill_name
+		buttons_grid.add_child(button)
+		button.pressed.connect(end_sacrifice.bind(i))
+		
+	popup.show()
+	get_tree().paused = true
+
+func end_sacrifice(id: int) -> void:
+	player_skills.remove_child(player_skills.get_children()[id])
+	
+	for skill in player_skills.get_children():
+		skill.level_up()
+		
+	for child in buttons_grid.get_children():
+		child.queue_free()
+		
+	popup.hide()
+	get_tree().paused = false
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p10cc"]
+bg_color = Color(0.6, 0.6, 0.6, 0.615686)
+
+[node name="SkillSystem" type="Node"]
+script = SubResource("GDScript_ayaya")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 20.0
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SkillSacrifice" type="Panel" parent="CanvasLayer/CenterContainer"]
+process_mode = 2
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_p10cc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer/SkillSacrifice"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 1480.0
+offset_bottom = 406.0
+
+[node name="Label" type="Label" parent="CanvasLayer/CenterContainer/SkillSacrifice/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 51
+text = "Your time is running out - and there’s no stopping it. 
+Sacrifice one of your skills:"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/CenterContainer/SkillSacrifice/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 5

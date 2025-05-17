@@ -1,7 +1,7 @@
 extends Node
 
 const BASIC_SPEED: int = 10000
-const BASE_LEVELUP_COOLDOWN: int = 30
+const BASE_LEVELUP_COOLDOWN: int = 5
 var score: int = 0
 
 func display_number(value: int, position: Vector2, size: float = 1, color: String = "#FFF", prefix: String = ""):
