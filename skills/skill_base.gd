@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 class_name Skill
 
 @onready var actor: Entity = get_parent().get_parent()

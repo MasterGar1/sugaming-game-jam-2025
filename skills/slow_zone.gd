@@ -17,6 +17,7 @@ func try_slow_zone() -> void:
 		var slow_zone := zone.instantiate()
 		get_tree().current_scene.add_child(slow_zone)
 		slow_zone.setup(damage, duration, actor.global_position, radius, level)
+		print(actor.global_position)
 
 func _input(event):
 	if event is InputEventKey and event.pressed and event.keycode == KEY_C:

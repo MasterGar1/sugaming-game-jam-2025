@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2eanr4chcrfr"]
+
+[ext_resource type="Script" uid="uid://d4keim851jli2" path="res://projectiles/bomb.gd" id="1_8u238"]
+[ext_resource type="PackedScene" uid="uid://c8ljwvtcmk328" path="res://components/hitbox.tscn" id="2_3xfjl"]
+[ext_resource type="Texture2D" uid="uid://ndragblbgxr7" path="res://icon.svg" id="3_dlca0"]
+
+[node name="Bomb" type="Node2D"]
+script = ExtResource("1_8u238")
+
+[node name="Hitbox" parent="." instance=ExtResource("2_3xfjl")]
+
+[node name="Cooldown" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_dlca0")

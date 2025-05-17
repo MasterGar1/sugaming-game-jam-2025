@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://mmvso6512jvq"]
+[gd_scene load_steps=7 format=3 uid="uid://mmvso6512jvq"]
 
 [ext_resource type="PackedScene" uid="uid://bk5ewacumhgtj" path="res://entities/player.tscn" id="1_ccgfq"]
-[ext_resource type="PackedScene" path="res://skills/dash.tscn" id="2_sotnn"]
-[ext_resource type="PackedScene" uid="uid://ro7sit31c68a" path="res://skills/slow_zone.tscn" id="3_dc1lj"]
+[ext_resource type="PackedScene" uid="uid://dgjub60ktjfq7" path="res://skills/dash.tscn" id="2_sotnn"]
+[ext_resource type="PackedScene" uid="uid://qwgvx1anpjyw" path="res://skills/slow_zone.tscn" id="3_dc1lj"]
 [ext_resource type="PackedScene" uid="uid://dugqfgqtqrbkt" path="res://entities/enemy.tscn" id="3_ps8fs"]
+[ext_resource type="PackedScene" uid="uid://b1cmr7ohv3ogd" path="res://skills/mouse_bomb.tscn" id="4_2m6yd"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ps8fs"]
 vertices = PackedVector2Array(426.453, 800.258, -463.961, 803.25, -471.203, -770.422, 452.023, -843.711)
@@ -16,16 +17,16 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(436.299, 810.233, -473.
 level = 3
 
 [node name="Player" parent="." instance=ExtResource("1_ccgfq")]
-speed = 5.0
 
 [node name="CollisionShape2D" parent="Player/Hurtbox" index="0"]
 shape = null
 
-[node name="SlowZone" parent="Player/Skills" index="1" instance=ExtResource("3_dc1lj")]
+[node name="SlowZone" parent="Player/Skills" index="0" instance=ExtResource("3_dc1lj")]
+
+[node name="MouseBomb" parent="Player/Skills" index="1" instance=ExtResource("4_2m6yd")]
 
 [node name="Enemy" parent="." instance=ExtResource("3_ps8fs")]
 position = Vector2(240, 197)
-speed = 1.0
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 scale = Vector2(-2.04676, -0.654133)
