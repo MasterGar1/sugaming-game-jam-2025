@@ -1,10 +1,35 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2p8ovrjf8r5y"]
+[gd_scene load_steps=14 format=3 uid="uid://d2p8ovrjf8r5y"]
 
 [ext_resource type="Script" uid="uid://3810ju0dfdtb" path="res://world/world.gd" id="1_6xmxd"]
+[ext_resource type="Texture2D" uid="uid://pboayg3685r0" path="res://textures/Zombie-Tileset---_0077_Capa-78.png" id="2_sc4t8"]
 [ext_resource type="PackedScene" uid="uid://bk5ewacumhgtj" path="res://entities/player.tscn" id="2_tcf2h"]
 [ext_resource type="PackedScene" uid="uid://dugqfgqtqrbkt" path="res://entities/enemy.tscn" id="3_4717r"]
+[ext_resource type="Texture2D" uid="uid://cqmyoxs05fiee" path="res://textures/Zombie-Tileset---_0078_Capa-79.png" id="3_ai45w"]
+[ext_resource type="Texture2D" uid="uid://bett62clu4gb3" path="res://textures/Zombie-Tileset---_0079_Capa-80.png" id="4_4papg"]
+[ext_resource type="Texture2D" uid="uid://cjewydnjy1nmu" path="res://textures/Zombie-Tileset---_0080_Capa-81.png" id="5_fyhu2"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ov2xu"]
+texture = ExtResource("2_sc4t8")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mad0u"]
+texture = ExtResource("3_ai45w")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ocfjn"]
+texture = ExtResource("4_4papg")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dqqhb"]
+texture = ExtResource("5_fyhu2")
+0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_4717r"]
+navigation_layer_0/layers = 1
+sources/0 = SubResource("TileSetAtlasSource_ov2xu")
+sources/1 = SubResource("TileSetAtlasSource_mad0u")
+sources/2 = SubResource("TileSetAtlasSource_ocfjn")
+sources/3 = SubResource("TileSetAtlasSource_dqqhb")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4717r"]
 vertices = PackedVector2Array(33349.3, -12055.7, 30723.7, 22227.8, -28987.2, 21234.2, -29696.8, -16528.3)
@@ -15,9 +40,10 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-29707, -16539, 33360, 
 y_sort_enabled = true
 script = ExtResource("1_6xmxd")
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_4717r")
-format = 2
+rendering_quadrant_size = 32
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 visible = false
