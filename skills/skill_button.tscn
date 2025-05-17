@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cd53w5pdrpkd"]
+
+[node name="SkillButton" type="Button"]
+theme_override_font_sizes/font_size = 71
+text = "Skill"
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true

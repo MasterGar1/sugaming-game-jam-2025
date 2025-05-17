@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://swubrvxm3yfo"]
+[gd_scene load_steps=5 format=3 uid="uid://swubrvxm3yfo"]
 
 [ext_resource type="PackedScene" uid="uid://cxqey4neh32ye" path="res://ui/sacrifice_menu.tscn" id="1_3f2kh"]
 [ext_resource type="Script" uid="uid://ba0603xfgjxt5" path="res://ui/gui.gd" id="1_xlv5r"]
+[ext_resource type="Script" uid="uid://j0wkqyykxsh0" path="res://ui/overlay.gd" id="3_mcydh"]
+[ext_resource type="Texture2D" uid="uid://cq54vgvg30sxn" path="res://textures/rect.png" id="4_fr2ss"]
 
 [node name="GUI" type="CanvasLayer"]
 process_mode = 3
@@ -9,3 +11,28 @@ script = ExtResource("1_xlv5r")
 
 [node name="Sacrifice" parent="." instance=ExtResource("1_3f2kh")]
 visible = false
+
+[node name="Overlay" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("3_mcydh")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Overlay"]
+layout_mode = 0
+offset_left = 541.0
+offset_top = 26.0
+offset_right = 1194.0
+offset_bottom = 67.0
+step = 0.001
+nine_patch_stretch = true
+texture_under = ExtResource("4_fr2ss")
+texture_over = ExtResource("4_fr2ss")
+texture_progress = ExtResource("4_fr2ss")
+tint_under = Color(0, 0, 0, 1)
+tint_over = Color(0.913725, 0.290196, 0.0666667, 0)
+tint_progress = Color(0.837563, 0.28887, 0.0397635, 1)
