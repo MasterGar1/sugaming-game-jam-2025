@@ -22,6 +22,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("3_mcydh")
+metadata/_edit_use_anchors_ = true
 
 [node name="SacrificeProgress" type="TextureProgressBar" parent="Overlay"]
 layout_mode = 0
@@ -37,6 +38,7 @@ texture_progress = ExtResource("4_fr2ss")
 tint_under = Color(0, 0, 0, 1)
 tint_over = Color(0.913725, 0.290196, 0.0666667, 0)
 tint_progress = Color(0.837563, 0.28887, 0.0397635, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Healthbar" type="TextureProgressBar" parent="Overlay"]
 layout_mode = 0
@@ -53,6 +55,7 @@ texture_progress = ExtResource("4_fr2ss")
 tint_under = Color(0, 0, 0, 1)
 tint_over = Color(1, 1, 1, 0)
 tint_progress = Color(0.592157, 0.121569, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Score" type="Label" parent="Overlay"]
 layout_mode = 0
@@ -63,6 +66,7 @@ offset_bottom = 77.0
 theme_override_font_sizes/font_size = 40
 text = "Score: 0"
 horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Time" type="Label" parent="Overlay"]
 layout_mode = 0
@@ -72,6 +76,7 @@ offset_right = 1588.0
 offset_bottom = 145.0
 theme_override_font_sizes/font_size = 40
 text = "Time: 0:00"
+metadata/_edit_use_anchors_ = true
 
 [node name="Skills" type="HBoxContainer" parent="Overlay"]
 layout_mode = 0
@@ -80,6 +85,7 @@ offset_top = 744.0
 offset_right = 694.0
 offset_bottom = 879.0
 alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="PauseMenu" parent="." instance=ExtResource("5_fr2ss")]
 visible = false

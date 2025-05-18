@@ -12,7 +12,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
 agent_radius = 0.0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ov2xu"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mmdvd"]
 resource_name = "Dark"
 texture = ExtResource("2_sc4t8")
 0:0/0 = 0
@@ -24,7 +24,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
 agent_radius = 0.0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mad0u"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fn3g3"]
 resource_name = "Light"
 texture = ExtResource("3_ai45w")
 0:0/0 = 0
@@ -32,8 +32,8 @@ texture = ExtResource("3_ai45w")
 
 [sub_resource type="TileSet" id="TileSet_4717r"]
 navigation_layer_0/layers = 1
-sources/0 = SubResource("TileSetAtlasSource_ov2xu")
-sources/1 = SubResource("TileSetAtlasSource_mad0u")
+sources/0 = SubResource("TileSetAtlasSource_mmdvd")
+sources/1 = SubResource("TileSetAtlasSource_fn3g3")
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
