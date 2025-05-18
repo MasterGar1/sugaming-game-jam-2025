@@ -4,7 +4,6 @@ const BASIC_SPEED: int = 10000
 const BASE_LEVELUP_COOLDOWN: int = 30
 var score: int = 0
 var time_secs: float = 0
-var enemy_health_multiplier: float = 1/10
 
 func display_number(value: float, position: Vector2, size: float = 1, color: String = "#FFF", prefix: String = ""):
 	var number = Label.new()
