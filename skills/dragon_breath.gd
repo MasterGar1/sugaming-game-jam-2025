@@ -4,19 +4,28 @@ class_name DragonBreath
 @onready var hitbox := $Hitbox
 @onready var collider := $Hitbox/CollisionShape2D
 
-@export var max_charge: float = 100 * level
+@export var max_charge: float:
+	get: return 100 * (1 + level) / 2
 @export var charge: float = max_charge
 
 var cnt: int = 0
 var enemies: Array[Enemy]
 var damage: float:
-	get: return 0.3 * (2 ** level)
+	get: return 0.5 * (2 ** level)
 	
 func add_enemy(enemy: Enemy):
 	enemies.append(enemy)
+	enemy.speed -= 0.2 * (1 + level)
 	
 func remove_enemy(enemy: Enemy):
 	enemies.erase(enemy)
+	enemy.speed += 0.2 * (1 + level)
+	
+func level_up():
+	super()
+	collider.shape.height *= 1.2
+	collider.disabled = true
+	charge = max_charge
 	
 func _ready() -> void:
 	collider.disabled = true
@@ -35,7 +44,7 @@ func _process(delta):
 	cnt += 1
 	
 	if not collider.disabled:
-		if cnt % 10 == 0:
+		if cnt % 8 == 0:
 			for enemy in enemies:
 				enemy.take_damage(hitbox)
 				enemy.die()
@@ -43,7 +52,7 @@ func _process(delta):
 		charge -= 0.5
 		
 		if charge <= 0:
-			collider.disabled = false
+			collider.disabled = true
 			enemies.clear()
 	else:
-		charge += 1
+		charge = min(charge + 0.3, max_charge)
