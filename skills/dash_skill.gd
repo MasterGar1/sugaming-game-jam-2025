@@ -9,7 +9,7 @@ const DASH_SPEED: float = 20.0
 
 @export var base_duration: float = 20.0
 
-@export var base_damage: int = 5
+@export var base_damage: int = 20
 
 var damage: int:
 	get: return level * base_damage

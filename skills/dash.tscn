@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgjub60ktjfq7"]
+[gd_scene load_steps=6 format=3 uid="uid://dwbgxlb2lm8cy"]
 
 [ext_resource type="Script" uid="uid://buxkn1slkd4e1" path="res://skills/dash_skill.gd" id="1_a03v1"]
 [ext_resource type="Texture2D" uid="uid://cgkcn0bbq15rc" path="res://textures/dash.png" id="2_6nnse"]

@@ -12,7 +12,7 @@ class_name DragonBreath
 var cnt: int = 0
 var enemies: Array[Enemy]
 var damage: float:
-	get: return 0.5 * (2 ** level)
+	get: return 2 ** level
 	
 func add_enemy(enemy: Enemy) -> void:
 	enemies.append(enemy)
