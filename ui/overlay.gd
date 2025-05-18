@@ -20,7 +20,7 @@ func _ready() -> void:
 		skills.add_child(nd)
 
 func get_time_formatted() -> String:
-	var total_sec: int = floor(Time.get_ticks_msec() / 1000.0)
+	var total_sec: int = floor(Global.time_secs)
 	var mins: int = floor(total_sec / 60.0)
 	var secs: int = total_sec % 60
 	return "%02d:%02d" % [mins, secs]
@@ -30,6 +30,7 @@ func _process(_delta: float) -> void:
 	healthbar.value = 1.0 * player.health / player.max_health * 100.0
 	score.text = "Score: %s" % Global.score
 	time.text = "Time: %s" % get_time_formatted()
+	
 	for i in range(player.skill_holder.get_child_count()):
 		skills.get_child(i).value = player.skill_holder.get_child(i).cooldown.time_left if "cooldown" in player.skill_holder.get_child(i) else 0.0
 		var cnt: int = player.skill_holder.get_child(i).current_count

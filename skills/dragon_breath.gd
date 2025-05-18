@@ -13,15 +13,15 @@ var enemies: Array[Enemy]
 var damage: float:
 	get: return 0.5 * (2 ** level)
 	
-func add_enemy(enemy: Enemy):
+func add_enemy(enemy: Enemy) -> void:
 	enemies.append(enemy)
 	enemy.speed -= 0.2 * (1 + level)
 	
-func remove_enemy(enemy: Enemy):
+func remove_enemy(enemy: Enemy) -> void:
 	enemies.erase(enemy)
 	enemy.speed += 0.2 * (1 + level)
 	
-func level_up():
+func level_up() -> void:
 	super()
 	collider.shape.height *= 1.2
 	collider.disabled = true
@@ -56,3 +56,5 @@ func _process(delta):
 			enemies.clear()
 	else:
 		charge = min(charge + 0.3, max_charge)
+		
+	current_count = int(charge)
