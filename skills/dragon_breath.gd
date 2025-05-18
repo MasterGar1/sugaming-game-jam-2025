@@ -22,7 +22,7 @@ func _ready() -> void:
 	collider.disabled = true
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed('dragon breath'):
+	if event.is_action_pressed('dragon breath') and charge >= 0:
 		collider.disabled = false
 		
 	if event.is_action_released('dragon breath'):
@@ -45,4 +45,5 @@ func _process(delta):
 		if charge <= 0:
 			collider.disabled = false
 			enemies.clear()
-		
+	else:
+		charge += 1
