@@ -14,6 +14,10 @@ var can_see_player: bool = false
 func _ready() -> void:
 	projectile = proj
 	navigation.target_desired_distance = avoidance_range
+	health = Global.time_secs + health
+	max_health = health
+	print(health)
+	print(max_health)
 
 func _process(_delta: float) -> void:
 	if can_see_player and cooldown.is_stopped():
@@ -49,6 +53,8 @@ func _on_hurtbox_entered(area: Hitbox) -> void:
 		area.get_parent().expire()
 	elif area.get_parent() is DragonBreath:
 		area.get_parent().add_enemy(self)
+	
+	take_damage(area)
 	die()
 
 func _on_hurtbox_exited(area: Hitbox) -> void:

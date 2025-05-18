@@ -14,6 +14,7 @@ radius = 71.007
 
 [node name="MeleeMob" instance=ExtResource("1_y1xbl")]
 proj = ExtResource("2_e47ap")
+max_health = 100
 health = 100
 attack = 10
 speed = 3.0

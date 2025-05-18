@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5okyd2wghdhb"]
+
+[sub_resource type="Curve" id="Curve_g78dr"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_oa8xk"]
+curve = SubResource("Curve_g78dr")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_by1xi"]
+particle_flag_rotate_y = true
+particle_flag_disable_z = true
+angle_min = 1.07288e-05
+angle_max = 263.8
+angle_curve = SubResource("CurveTexture_oa8xk")
+gravity = Vector3(0, 0, 0)
+scale_min = 0.0
+scale_max = 0.0
+sub_emitter_keep_velocity = true
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+position = Vector2(63, 33)
+amount = 29
+lifetime = 4.73
+collision_base_size = 23.84
+trail_lifetime = 1.04
+trail_sections = 12
+process_material = SubResource("ParticleProcessMaterial_by1xi")
