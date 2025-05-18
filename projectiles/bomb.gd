@@ -3,6 +3,7 @@ extends Node2D
 @onready var hitbox: Hitbox = $Hitbox
 @onready var cooldown := $Cooldown
 @onready var shape := $Hitbox/CollisionShape2D
+@onready var particles: GPUParticles2D = $GPUParticles2D
 
 @export var damage: int
 @export var lifespan: int
@@ -10,6 +11,9 @@ extends Node2D
 var damage_burn: int
 var damage_base: int
 var imposters: Array[Node2D]
+
+func _ready() -> void:
+	particles.emitting = true
 
 ## Used to initialize a bomb with given stats
 func setup(dmg: int, start_position: Vector2, ls: int, rd: int) -> void:
@@ -20,6 +24,8 @@ func setup(dmg: int, start_position: Vector2, ls: int, rd: int) -> void:
 	damage_burn = floor(damage / 2.0)
 	damage_base = damage
 	cooldown.start(lifespan)
+	particles.lifetime = lifespan
+	particles.process_material.radial_accel_max = rd
 
 ## Kills the bomb
 func expire() -> void:

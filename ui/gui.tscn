@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://ba0603xfgjxt5" path="res://ui/gui.gd" id="1_xlv5r"]
 [ext_resource type="Script" uid="uid://j0wkqyykxsh0" path="res://ui/overlay.gd" id="3_mcydh"]
 [ext_resource type="Texture2D" uid="uid://cq54vgvg30sxn" path="res://textures/rect.png" id="4_fr2ss"]
-[ext_resource type="PackedScene" uid="uid://cpjbw84u8eflx" path="res://ui/pause_menu.tscn" id="5_fr2ss"]
+[ext_resource type="PackedScene" path="res://ui/pause_menu.tscn" id="5_fr2ss"]
 
 [node name="GUI" type="CanvasLayer"]
 process_mode = 3
@@ -83,4 +83,3 @@ alignment = 1
 
 [node name="PauseMenu" parent="." instance=ExtResource("5_fr2ss")]
 visible = false
-

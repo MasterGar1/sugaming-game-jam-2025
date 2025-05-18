@@ -4,11 +4,15 @@ const DASH_SPEED: float = 20.0
 
 @onready var cooldown := $Cooldown
 @onready var collider := $Hitbox/CollisionShape2D
+@onready var particles := $GPUParticles2D
 
 @export var base_duration: float = 20.0
 
+@export var base_damage: int = 5
+
+var damage: int:
+	get: return level * base_damage
 var duration: float = base_duration
-var damage: int = 5
 
 func _ready() -> void:
 	actor.end_movement_lock.connect(end_dash)
@@ -26,6 +30,7 @@ func try_dash() -> void:
 	if current_count <= 0 or direction.length() == 0 or not collider.disabled:
 		return
 	
+	particles.emitting = true
 	current_count -= 1
 	if current_count == 0: cooldown.start()
 	actor.collision.disabled = true
