@@ -21,7 +21,8 @@ monitorable = false
 shape = SubResource("CircleShape2D_i10ao")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-amount = 80
+z_index = 2
+amount = 200
 explosiveness = 0.5
 process_material = ExtResource("3_sjc5t")
 

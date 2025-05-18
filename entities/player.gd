@@ -5,6 +5,7 @@ class_name Player
 @onready var collision := $CollisionShape2D
 @onready var cooldown := $AttackCooldown
 @onready var skill_holder := $Skills
+@onready var sprite: AnimatedSprite2D = $Sprite2D
 
 @export var skills: Array[PackedScene]
 # Vars
@@ -32,6 +33,11 @@ func _physics_process(delta: float) -> void:
 		if force_duration == 0:
 			movement_locked = false
 			end_movement_lock.emit()
+	if direction == Vector2.ZERO:
+		sprite.play('idle')
+	else:
+		sprite.flip_h = parse_animation(direction) == 'left'
+		sprite.play(parse_animation(direction))
 
 func _on_hurtbox_entered(area: Area2D) -> void:
 	if movement_locked:

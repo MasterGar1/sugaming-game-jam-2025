@@ -1,7 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://bk5ewacumhgtj"]
+[gd_scene load_steps=21 format=3 uid="uid://bk5ewacumhgtj"]
 
 [ext_resource type="Script" uid="uid://dg5itiqsnv06l" path="res://entities/player.gd" id="1_merdl"]
-[ext_resource type="Texture2D" uid="uid://b8fg5ylpjo3t1" path="res://icon.svg" id="2_b0kkn"]
 [ext_resource type="PackedScene" uid="uid://dwbgxlb2lm8cy" path="res://skills/dash.tscn" id="2_qsoyl"]
 [ext_resource type="PackedScene" uid="uid://qwgvx1anpjyw" path="res://skills/slow_zone.tscn" id="3_6nm46"]
 [ext_resource type="Script" uid="uid://cmdwsf44r87jy" path="res://components/camera.gd" id="3_e4p34"]
@@ -9,6 +8,82 @@
 [ext_resource type="PackedScene" uid="uid://byfqnqtg3tgr7" path="res://skills/mouse_bomb.tscn" id="4_6nm46"]
 [ext_resource type="PackedScene" uid="uid://bokhihqadipol" path="res://skills/dragon_breath.tscn" id="5_i623q"]
 [ext_resource type="PackedScene" uid="uid://b64sbggfgw6l0" path="res://skills/orbit.tscn" id="6_ef06p"]
+[ext_resource type="Texture2D" uid="uid://ch2fnmnjago85" path="res://textures/enemy_textures/player/Zombie-Tileset---_0476_Capa-477.png" id="7_8rie4"]
+[ext_resource type="Texture2D" uid="uid://cjhcrthgwopp8" path="res://textures/enemy_textures/player/Zombie-Tileset---_0479_Capa-480.png" id="7_q0i8f"]
+[ext_resource type="Texture2D" uid="uid://kbk2e6wt12b7" path="res://textures/enemy_textures/player/Zombie-Tileset---_0482_Capa-483.png" id="7_x08pd"]
+[ext_resource type="Texture2D" uid="uid://dsaesjn04eefr" path="res://textures/enemy_textures/player/Zombie-Tileset---_0480_Capa-481.png" id="8_0i614"]
+[ext_resource type="Texture2D" uid="uid://de7q0kuuohseo" path="res://textures/enemy_textures/player/Zombie-Tileset---_0483_Capa-484.png" id="8_dchgp"]
+[ext_resource type="Texture2D" uid="uid://b2ek4mpnd5ioa" path="res://textures/enemy_textures/player/Zombie-Tileset---_0477_Capa-478.png" id="8_dp3pk"]
+[ext_resource type="Texture2D" uid="uid://c5q1sepp4j4vn" path="res://textures/enemy_textures/player/Zombie-Tileset---_0478_Capa-479.png" id="9_cgp7q"]
+[ext_resource type="Texture2D" uid="uid://bifxxel75admo" path="res://textures/enemy_textures/player/Zombie-Tileset---_0484_Capa-485.png" id="9_kdgjc"]
+[ext_resource type="Texture2D" uid="uid://b2u2ix03tsun0" path="res://textures/enemy_textures/player/Zombie-Tileset---_0481_Capa-482.png" id="9_oprnr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q0i8f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_8rie4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dp3pk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_cgp7q")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_8rie4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_q0i8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0i614")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_oprnr")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_q0i8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0i614")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_oprnr")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_x08pd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dchgp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_kdgjc")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e4p34"]
 radius = 55.0
@@ -29,8 +104,10 @@ attack = 25
 speed = 3.5
 reload = 0.2
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_b0kkn")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_q0i8f")
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)

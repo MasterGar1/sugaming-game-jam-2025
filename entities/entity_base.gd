@@ -19,6 +19,16 @@ func take_damage(from_what: Hitbox) -> void:
 func die() -> void:
 	pass
 
+func parse_animation(direction: Vector2) -> String:
+	var a: float = direction.angle()
+	if a > PI /4 and a <= PI * 3 / 4:
+		return 'down'
+	elif a > PI * 3 / 4 and a <= PI * 5 / 4:
+		return 'left'
+	elif a < -PI / 4 and a >= -PI * 3 / 4:
+		return 'up'
+	return 'right'
+
 func shoot(dir: Vector2) -> void:
 	var nd: Projectile = projectile.instantiate()
 	nd.global_position = self.global_position + Vector2.ONE.rotated(randf_range(0, 2 * PI)) * 30
