@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://qxx11ao1gffs" path="res://projectiles/projectile.gd" id="1_wrf7x"]
 [ext_resource type="PackedScene" uid="uid://c8ljwvtcmk328" path="res://components/hitbox.tscn" id="2_7nr1q"]
-[ext_resource type="Texture2D" uid="uid://cnpja8g1xjyrk" path="res://textures/projectile_basic.png" id="2_7ypqm"]
+[ext_resource type="Texture2D" uid="uid://b1qk4upbrqbn1" path="res://textures/projectile_basic.png" id="2_7ypqm"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7nr1q"]
 particle_flag_disable_z = true
@@ -13,7 +13,7 @@ angle_max = 129.7
 gravity = Vector3(0, 0, 0)
 scale_max = 10.0
 
-[node name="Projectile" type="CharacterBody2D"]
+[node name="Projectile2" type="CharacterBody2D"]
 modulate = Color(2, 2, 2, 1)
 z_index = 2
 collision_layer = 0

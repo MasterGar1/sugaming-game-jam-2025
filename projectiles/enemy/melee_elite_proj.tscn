@@ -17,7 +17,7 @@ gravity = Vector3(0, 0, 0)
 scale_min = 10.0
 scale_max = 20.0
 
-[node name="Projectile" instance=ExtResource("1_u8se7")]
+[node name="Projectile3" instance=ExtResource("1_u8se7")]
 
 [node name="Sprite2D" parent="." index="0"]
 scale = Vector2(3.5625, 3.5625)
