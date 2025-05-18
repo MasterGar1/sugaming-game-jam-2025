@@ -10,6 +10,7 @@ var time_secs: float = 0
 var enemy_health_multiplier: float = 1 / 10.0
 var in_game: bool = false
 var in_menu: bool = false
+var high_score: int = 0
 
 func save_score() -> void:
 	var file = FileAccess.open(SCORE_FILE, FileAccess.WRITE_READ)
