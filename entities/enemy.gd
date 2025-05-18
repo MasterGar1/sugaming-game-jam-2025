@@ -4,6 +4,7 @@ class_name Enemy
 @onready var navigation: NavigationAgent2D = $NavigationAgent2D
 @onready var player: Player = get_tree().get_nodes_in_group('player').front()
 @onready var cooldown := $AttackCooldown
+@onready var sprite: AnimatedSprite2D = $Sprite2D
 
 @export var proj: PackedScene
 @export var score: int = 100
@@ -14,10 +15,8 @@ var can_see_player: bool = false
 func _ready() -> void:
 	projectile = proj
 	navigation.target_desired_distance = avoidance_range
-	health = Global.time_secs + health
+	health = floor(Global.time_secs) + health
 	max_health = health
-	print(health)
-	print(max_health)
 
 func _process(_delta: float) -> void:
 	if can_see_player and cooldown.is_stopped():
@@ -33,6 +32,8 @@ func follow_player(delta: float) -> void:
 	navigation.set_velocity(dir.normalized() * Global.BASIC_SPEED * delta)
 	velocity *= speed
 	move_and_slide()
+	sprite.flip_h = parse_animation(dir) == 'right' 
+	sprite.play(parse_animation(dir))
 
 func die() -> void:
 	if health <= 0:

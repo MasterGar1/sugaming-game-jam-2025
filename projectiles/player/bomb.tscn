@@ -29,6 +29,7 @@ wait_time = 0.6
 autostart = true
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+z_index = 2
 amount = 40
 lifetime = 5.0
 explosiveness = 0.8

@@ -34,6 +34,7 @@ func change_state(state: bool) -> void:
 	
 func _ready() -> void:
 	change_state(true)
+	current_count = 1
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed('dragon breath') and charge >= 0:

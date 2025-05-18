@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cve1vwbinx18n"]
 
 [ext_resource type="Script" uid="uid://5vmdk10tm5j5" path="res://components/hitbox.gd" id="1_qd3a6"]
-[ext_resource type="Texture2D" uid="uid://b8fg5ylpjo3t1" path="res://icon.svg" id="2_2uyx0"]
 [ext_resource type="Material" uid="uid://b4yau3x1i7cdr" path="res://particles/orb.tres" id="3_tft3c"]
+[ext_resource type="Texture2D" uid="uid://cnpja8g1xjyrk" path="res://textures/projectile_basic.png" id="3_vyb0s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tft3c"]
 radius = 29.0689
@@ -14,14 +14,16 @@ monitorable = false
 script = ExtResource("1_qd3a6")
 metadata/_custom_type_script = "uid://5vmdk10tm5j5"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_2uyx0")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_tft3c")
 debug_color = Color(0.56154, 0.413063, 0.959644, 0.42)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+z_index = 2
 amount = 10
 process_material = ExtResource("3_tft3c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.584247, 0.394601, 1, 1)
+scale = Vector2(0.8, 0.768)
+texture = ExtResource("3_vyb0s")
