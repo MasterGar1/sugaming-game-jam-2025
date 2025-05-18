@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dk3fwaou182ef"]
 
 [ext_resource type="Script" uid="uid://j0wkqyykxsh0" path="res://ui/overlay.gd" id="1_1mp40"]
-[ext_resource type="Texture2D" uid="uid://d0vs7517vlai0" path="res://textures/progress_bar_inner.png" id="3_552s0"]
-[ext_resource type="Texture2D" uid="uid://biap6ex3qa71p" path="res://textures/progress_bar_over.png" id="3_ps1qe"]
-[ext_resource type="Texture2D" uid="uid://dvtk8vbu67ktl" path="res://textures/progress_bar_inner2.png" id="4_552s0"]
+[ext_resource type="Texture2D" uid="uid://b2ali7rvo1nix" path="res://textures/progress_bar_inner.png" id="3_552s0"]
+[ext_resource type="Texture2D" uid="uid://cfthtcbjkpob1" path="res://textures/progress_bar_over.png" id="3_ps1qe"]
+[ext_resource type="Texture2D" uid="uid://3s3ua2tst6b2" path="res://textures/progress_bar_inner2.png" id="4_552s0"]
 
 [node name="Overlay" type="Control"]
 layout_mode = 3
