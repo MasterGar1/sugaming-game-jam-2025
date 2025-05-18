@@ -1,16 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bdnc3tkmspgdl"]
+[gd_scene load_steps=10 format=3 uid="uid://bdnc3tkmspgdl"]
 
 [ext_resource type="Script" uid="uid://c1huhbbv5blaf" path="res://world/main_menu.gd" id="1_ctg6d"]
 [ext_resource type="Texture2D" uid="uid://pboayg3685r0" path="res://textures/Zombie-Tileset---_0077_Capa-78.png" id="1_p6djx"]
 [ext_resource type="Script" uid="uid://blxiu3m2mmxiy" path="res://ui/play_button.gd" id="2_6q35d"]
 [ext_resource type="Texture2D" uid="uid://cqmyoxs05fiee" path="res://textures/Zombie-Tileset---_0078_Capa-79.png" id="2_ctg6d"]
-
-[sub_resource type="FontFile" id="FontFile_6q35d"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mmdvd"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -60,16 +53,14 @@ theme_override_constants/margin_bottom = 200
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Margin"]
 layout_mode = 2
 
-[node name="Title" type="RichTextLabel" parent="CanvasLayer/Margin/VBoxContainer"]
+[node name="Title" type="Label" parent="CanvasLayer/Margin/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/default_color = Color(0.733333, 0.635294, 0, 1)
-theme_override_constants/shadow_offset_y = -5
+theme_override_colors/font_color = Color(0.696153, 0.640113, 0.160788, 1)
+theme_override_colors/font_shadow_color = Color(0.303233, 0.303233, 0.303233, 1)
 theme_override_constants/shadow_offset_x = 10
-theme_override_fonts/bold_font = SubResource("FontFile_6q35d")
-theme_override_font_sizes/normal_font_size = 171
-theme_override_font_sizes/bold_font_size = 0
-bbcode_enabled = true
+theme_override_constants/shadow_offset_y = -5
+theme_override_font_sizes/font_size = 200
 text = "Skill Issue"
 horizontal_alignment = 1
 
