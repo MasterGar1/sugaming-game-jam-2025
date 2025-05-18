@@ -7,7 +7,7 @@ const BASE_LEVELUP_COOLDOWN: int = 30
 var score: int = 0
 var time_secs: float = 0
 
-var enemy_health_multiplier: float = 1/10
+var enemy_health_multiplier: float = 1 / 10.0
 var in_game: bool = false
 var in_menu: bool = false
 

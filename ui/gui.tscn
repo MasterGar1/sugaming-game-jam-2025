@@ -1,14 +1,38 @@
-[gd_scene load_steps=6 format=3 uid="uid://swubrvxm3yfo"]
+[gd_scene load_steps=7 format=3 uid="uid://swubrvxm3yfo"]
+
 
 [ext_resource type="PackedScene" uid="uid://cxqey4neh32ye" path="res://ui/sacrifice_menu.tscn" id="1_3f2kh"]
 [ext_resource type="Script" uid="uid://ba0603xfgjxt5" path="res://ui/gui.gd" id="1_xlv5r"]
+[ext_resource type="Shader" uid="uid://bi1opme7dotk8" path="res://ui/gui.gdshader" id="2_fr2ss"]
 [ext_resource type="PackedScene" uid="uid://dk3fwaou182ef" path="res://ui/overlay.tscn" id="3_mcydh"]
 [ext_resource type="PackedScene" uid="uid://bge4u6mon07oh" path="res://ui/pause_menu.tscn" id="5_fr2ss"]
 [ext_resource type="PackedScene" uid="uid://db6ls1xt28ev7" path="res://ui/death_menu.tscn" id="5_juqqw"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_juqqw"]
+shader = ExtResource("2_fr2ss")
+shader_parameter/outerRadius = 3.5
+shader_parameter/MainAlpha = 1.0
+
 [node name="GUI" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_xlv5r")
+
+[node name="Vignette" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Vignette"]
+material = SubResource("ShaderMaterial_juqqw")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Sacrifice" parent="." instance=ExtResource("1_3f2kh")]
 visible = false

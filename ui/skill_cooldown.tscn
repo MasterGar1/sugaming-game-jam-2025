@@ -9,7 +9,7 @@ outline_size = 3
 outline_color = Color(0, 0, 0, 1)
 
 [node name="SkillCooldown" type="TextureProgressBar"]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(150, 150)
 offset_right = 20.0
 offset_bottom = 20.0
 size_flags_horizontal = 4
@@ -22,11 +22,18 @@ texture_progress = ExtResource("2_e7dpw")
 tint_progress = Color(1, 1, 1, 0.247059)
 
 [node name="Charges" type="Label" parent="."]
-layout_mode = 0
-offset_left = 5.0
-offset_top = 50.0
-offset_right = 95.0
-offset_bottom = 95.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -22.5
+offset_right = 45.0
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
 label_settings = SubResource("LabelSettings_tuqg8")
 horizontal_alignment = 1
 vertical_alignment = 1

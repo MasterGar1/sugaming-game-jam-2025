@@ -1,7 +1,75 @@
-[gd_scene load_steps=6 format=3 uid="uid://ca31ekicmwftt"]
+[gd_scene load_steps=16 format=3 uid="uid://ca31ekicmwftt"]
 
 [ext_resource type="PackedScene" uid="uid://dugqfgqtqrbkt" path="res://entities/enemy.tscn" id="1_rvr3s"]
 [ext_resource type="PackedScene" uid="uid://dfhbh36qodu4p" path="res://projectiles/enemy/ranged_mob_proj.tscn" id="2_le0p3"]
+[ext_resource type="Texture2D" uid="uid://ccapgikbxqiuv" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0430_Capa-431.png" id="3_hx6vs"]
+[ext_resource type="Texture2D" uid="uid://dgugj5c76wha3" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0431_Capa-432.png" id="4_uubqr"]
+[ext_resource type="Texture2D" uid="uid://c5blofcobdjve" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0432_Capa-433.png" id="5_2tjfj"]
+[ext_resource type="Texture2D" uid="uid://boamx72noaq7k" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0433_Capa-434.png" id="6_n4jbr"]
+[ext_resource type="Texture2D" uid="uid://ppcwj0kh8a8y" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0434_Capa-435.png" id="7_kk6vh"]
+[ext_resource type="Texture2D" uid="uid://btjs4mvhjqyk7" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0435_Capa-436.png" id="8_r37vq"]
+[ext_resource type="Texture2D" uid="uid://chxo0jgeqvdxa" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0436_Capa-437.png" id="9_hckae"]
+[ext_resource type="Texture2D" uid="uid://btmjg0qrhteoe" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0437_Capa-438.png" id="10_q65qe"]
+[ext_resource type="Texture2D" uid="uid://csjgnketh33yf" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0438_Capa-439.png" id="11_byhud"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_le0p3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_hx6vs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_uubqr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2tjfj")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_n4jbr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kk6vh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_r37vq")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_n4jbr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kk6vh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_r37vq")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_hckae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_q65qe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_byhud")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ispu6"]
 radius = 41.0488
@@ -23,7 +91,9 @@ attack = 10
 reload = 2.5
 
 [node name="Sprite2D" parent="." index="0"]
-scale = Vector2(0.828125, 0.921875)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_le0p3")
+animation = &"up"
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource("CircleShape2D_ispu6")
