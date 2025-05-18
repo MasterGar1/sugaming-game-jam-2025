@@ -6,6 +6,7 @@ class_name Player
 @onready var cooldown := $AttackCooldown
 @onready var skill_holder := $Skills
 @onready var sprite: AnimatedSprite2D = $Sprite2D
+@onready var camera := $Camera2D
 
 @export var skills: Array[PackedScene]
 # Vars
@@ -43,7 +44,7 @@ func _physics_process(delta: float) -> void:
 func _on_hurtbox_entered(area: Area2D) -> void:
 	if movement_locked:
 		return
-		
+	camera.apply_shake()
 	take_damage(area)
 	die()
 	

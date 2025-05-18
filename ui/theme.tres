@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://m0223o1jstv1"]
+
+[ext_resource type="FontFile" uid="uid://bkfxuhohr20g5" path="res://projectiles/sharrpe-gothik-font/SharrpeGothik-Mdyw.ttf" id="1_rqugq"]
+
+[resource]
+default_font = ExtResource("1_rqugq")

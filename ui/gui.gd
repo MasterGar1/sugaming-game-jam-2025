@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var death_menu := $DeathMenu
 
 func pause() -> void:
+	overlay.visible = get_tree().paused
 	get_tree().paused = not get_tree().paused
 
 func _ready() -> void:
@@ -14,6 +15,5 @@ func _ready() -> void:
 func game_over() -> void:
 	Global.in_game = false
 	pause()
-	print(get_tree().paused)
 	death_menu.setup()
 	death_menu.show()

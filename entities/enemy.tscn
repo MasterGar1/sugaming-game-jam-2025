@@ -38,7 +38,6 @@ radius = 100.0
 neighbor_distance = 200.0
 time_horizon_agents = 2.0
 avoidance_layers = 0
-debug_enabled = true
 
 [node name="AttackCooldown" type="Timer" parent="."]
 one_shot = true

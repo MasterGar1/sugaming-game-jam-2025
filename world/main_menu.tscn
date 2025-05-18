@@ -1,9 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://bdnc3tkmspgdl"]
+[gd_scene load_steps=12 format=3 uid="uid://bdnc3tkmspgdl"]
 
 [ext_resource type="Script" uid="uid://c1huhbbv5blaf" path="res://world/main_menu.gd" id="1_ctg6d"]
 [ext_resource type="Texture2D" uid="uid://pboayg3685r0" path="res://textures/Zombie-Tileset---_0077_Capa-78.png" id="1_p6djx"]
+[ext_resource type="Theme" uid="uid://m0223o1jstv1" path="res://ui/theme.tres" id="2_6fjm2"]
 [ext_resource type="Script" uid="uid://blxiu3m2mmxiy" path="res://ui/play_button.gd" id="2_6q35d"]
 [ext_resource type="Texture2D" uid="uid://cqmyoxs05fiee" path="res://textures/Zombie-Tileset---_0078_Capa-79.png" id="2_ctg6d"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ugk75"]
+font_size = 254
+font_color = Color(0.717448, 0.798122, 0, 1)
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0.266667, 0.266667, 0.266667, 0.615686)
+shadow_offset = Vector2(5, 5)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mmdvd"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -45,6 +54,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_6fjm2")
 theme_override_constants/margin_left = 500
 theme_override_constants/margin_top = 200
 theme_override_constants/margin_right = 500
@@ -62,9 +72,11 @@ theme_override_constants/shadow_offset_x = 10
 theme_override_constants/shadow_offset_y = -5
 theme_override_font_sizes/font_size = 200
 text = "Skill Issue"
+label_settings = SubResource("LabelSettings_ugk75")
 horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="CanvasLayer/Margin/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 61
 text = "Intro text. Intro text."
