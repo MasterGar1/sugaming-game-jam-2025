@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgjub60ktjfq7"]
+[gd_scene load_steps=6 format=3 uid="uid://dgjub60ktjfq7"]
 
 [ext_resource type="Script" uid="uid://buxkn1slkd4e1" path="res://skills/dash_skill.gd" id="1_a03v1"]
 [ext_resource type="Texture2D" uid="uid://cgkcn0bbq15rc" path="res://textures/dash.png" id="2_6nnse"]
 [ext_resource type="PackedScene" uid="uid://c8ljwvtcmk328" path="res://components/hitbox.tscn" id="2_udjjx"]
+[ext_resource type="Material" uid="uid://dder7lafl8v07" path="res://particles/dash.tres" id="4_rk66w"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6nnse"]
 radius = 76.0
@@ -11,6 +12,7 @@ height = 152.0
 [node name="Dash" type="Node2D"]
 script = ExtResource("1_a03v1")
 skill_name = "Devil Dash"
+cooldown_time = 8.0
 image = ExtResource("2_6nnse")
 
 [node name="Cooldown" type="Timer" parent="."]
@@ -24,5 +26,14 @@ collision_mask = 0
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
 shape = SubResource("CapsuleShape2D_6nnse")
 disabled = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 0.6
+process_material = ExtResource("4_rk66w")
+
+[connection signal="timeout" from="Cooldown" to="." method="reload"]
 
 [editable path="Hitbox"]
