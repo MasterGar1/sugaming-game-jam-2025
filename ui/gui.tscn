@@ -31,6 +31,7 @@ offset_top = 27.0
 offset_right = 1239.0
 offset_bottom = 68.0
 step = 0.001
+fill_mode = 1
 nine_patch_stretch = true
 texture_under = ExtResource("4_fr2ss")
 texture_over = ExtResource("4_fr2ss")
@@ -41,7 +42,10 @@ tint_progress = Color(0.837563, 0.28887, 0.0397635, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Healthbar" type="TextureProgressBar" parent="Overlay"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.613889
+anchor_bottom = 0.613889
 offset_left = 59.0
 offset_top = 60.0
 offset_right = 122.0

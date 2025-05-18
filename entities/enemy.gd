@@ -49,6 +49,7 @@ func _on_hurtbox_entered(area: Hitbox) -> void:
 		area.get_parent().expire()
 	elif area.get_parent() is DragonBreath:
 		area.get_parent().add_enemy(self)
+	take_damage(area)
 	die()
 
 func _on_hurtbox_exited(area: Hitbox) -> void:
