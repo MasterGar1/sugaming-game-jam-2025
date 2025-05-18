@@ -1,9 +1,24 @@
 extends Node
 
+const SCORE_FILE: String = "res://score.tres"
 const BASIC_SPEED: int = 10000
 const BASE_LEVELUP_COOLDOWN: int = 30
+
 var score: int = 0
 var time_secs: float = 0
+
+func save_score() -> void:
+	var file = FileAccess.open(SCORE_FILE, FileAccess.WRITE_READ)
+	file.store_64(score)
+	
+func load_scores() -> Vector2:
+	var file = FileAccess.open(SCORE_FILE, FileAccess.READ)
+	var scores : Vector2
+	
+	if FileAccess.file_exists(SCORE_FILE):
+		scores = file.readLines()
+	
+	return scores
 
 func display_number(value: float, position: Vector2, size: float = 1, color: String = "#FFF", prefix: String = ""):
 	var number = Label.new()
