@@ -1,4 +1,4 @@
-[gd_resource type="ParticleProcessMaterial" load_steps=3 format=3 uid="uid://e4s5ekv8vy7x"]
+[gd_resource type="ParticleProcessMaterial" load_steps=3 format=3 uid="uid://bk5xng6xvsj6o"]
 
 [sub_resource type="Gradient" id="Gradient_3h4b6"]
 colors = PackedColorArray(0.814318, 0.565858, 3.85046e-07, 1, 0.986203, 0.315611, 3.85046e-07, 1)

@@ -84,7 +84,7 @@ height = 102.0
 
 [node name="MeleeElite" instance=ExtResource("1_7qsjm")]
 proj = ExtResource("2_4w5m0")
-score = 200
+score = 350
 avoidance_range = 100.0
 max_health = 60
 health = 60

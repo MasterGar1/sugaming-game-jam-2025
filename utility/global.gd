@@ -1,10 +1,28 @@
 extends Node
 
+const SCORE_FILE: String = "res://score.tres"
 const BASIC_SPEED: int = 10000
 const BASE_LEVELUP_COOLDOWN: int = 30
+
 var score: int = 0
 var time_secs: float = 0
+
 var enemy_health_multiplier: float = 1 / 10.0
+var in_game: bool = false
+var in_menu: bool = false
+
+func save_score() -> void:
+	var file = FileAccess.open(SCORE_FILE, FileAccess.WRITE_READ)
+	file.store_64(score)
+	
+func load_scores() -> Vector2:
+	var file = FileAccess.open(SCORE_FILE, FileAccess.READ)
+	var scores : Vector2
+	
+	if FileAccess.file_exists(SCORE_FILE):
+		scores = file.readLines()
+	
+	return scores
 
 func display_number(value: float, position: Vector2, size: float = 1, color: String = "#FFF", prefix: String = ""):
 	var number = Label.new()
@@ -37,6 +55,13 @@ func display_number(value: float, position: Vector2, size: float = 1, color: Str
 	
 	await tween.finished
 	number.queue_free()
+
+func get_time_formatted() -> String:
+	var total_sec: int = floor(Global.time_secs)
+	var mins: int = floor(total_sec / 60.0)
+	var secs: int = total_sec % 60
+	return "%02d:%02d" % [mins, secs]
 	
 func _process(delta: float) -> void:
-	time_secs += delta
+	if in_game:
+		time_secs += delta
