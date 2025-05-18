@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://buboil1hfthho"]
+
+[ext_resource type="PackedScene" uid="uid://dugqfgqtqrbkt" path="res://entities/enemy.tscn" id="1_yfa42"]
+[ext_resource type="PackedScene" uid="uid://7jryea3jknps" path="res://projectiles/enemy/ranged_elite_proj.tscn" id="2_78eex"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_78eex"]
+radius = 25.0
+height = 126.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yfa42"]
+radius = 851.115
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p4t8y"]
+radius = 59.0
+height = 226.0
+
+[node name="Enemy" instance=ExtResource("1_yfa42")]
+proj = ExtResource("2_78eex")
+score = 230
+avoidance_range = 700.0
+max_health = 40
+health = 40
+attack = 30
+speed = 1.0
+reload = 3.5
+projectile_speed = 20
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.828125, 1.65625)
+
+[node name="CollisionShape2D" parent="." index="1"]
+rotation = -3.14159
+shape = SubResource("CapsuleShape2D_78eex")
+
+[node name="CollisionShape2D" parent="AttackArea" index="0"]
+shape = SubResource("CircleShape2D_yfa42")
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+shape = SubResource("CapsuleShape2D_p4t8y")
+
+[editable path="AttackArea"]
+[editable path="Hurtbox"]

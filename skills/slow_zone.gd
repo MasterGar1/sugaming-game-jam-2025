@@ -2,7 +2,7 @@ extends Skill
 class_name SlowZone
 
 @onready var cooldown := $Cooldown
-@onready var zone := preload("res://projectiles/zone.tscn")
+@onready var zone := preload("res://projectiles/player/zone.tscn")
 
 @export var base_duration: int = 5
 @export var base_radius: int = 200

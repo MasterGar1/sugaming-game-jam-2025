@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://cu6yona67onmd"]
+
+[ext_resource type="PackedScene" uid="uid://dugqfgqtqrbkt" path="res://entities/enemy.tscn" id="1_7qsjm"]
+[ext_resource type="PackedScene" uid="uid://c66rp7slk4w3y" path="res://projectiles/enemy/melee_elite_proj.tscn" id="2_4w5m0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4w5m0"]
+radius = 24.0
+height = 80.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7qsjm"]
+radius = 207.634
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_umpaa"]
+radius = 37.0
+height = 102.0
+
+[node name="MeleeElite" instance=ExtResource("1_7qsjm")]
+proj = ExtResource("2_4w5m0")
+score = 200
+avoidance_range = 100.0
+max_health = 60
+health = 60
+attack = 15
+speed = 4.0
+reload = 1.0
+projectile_speed = 20
+projectile_lifespan = 100
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.734375, 0.515625)
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CapsuleShape2D_4w5m0")
+
+[node name="CollisionShape2D" parent="AttackArea" index="0"]
+shape = SubResource("CircleShape2D_7qsjm")
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+rotation = -1.57079
+shape = SubResource("CapsuleShape2D_umpaa")
+
+[editable path="AttackArea"]
+[editable path="Hurtbox"]

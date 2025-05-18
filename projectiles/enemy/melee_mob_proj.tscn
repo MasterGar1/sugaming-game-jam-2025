@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8614f6xinggo"]
+
+[ext_resource type="PackedScene" uid="uid://dwwkqy2tfl80b" path="res://projectiles/enemy_projectile.tscn" id="1_xs8ws"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_erfn4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tqi2a"]
+radius = 193.662
+
+[node name="Projectile" instance=ExtResource("1_xs8ws")]
+
+[node name="Sprite2D" parent="." index="0"]
+visible = false
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_erfn4")
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+shape = SubResource("CircleShape2D_tqi2a")
+
+[editable path="Hitbox"]

@@ -13,9 +13,15 @@ var projectile: Resource
 
 func take_damage(from_what: Hitbox) -> void:
 	health -= from_what.damage
+	Global.display_number(from_what.damage, position, 1, "#F00")
+	die()
+
+func die() -> void:
+	pass
 
 func shoot(dir: Vector2) -> void:
 	var nd: Projectile = projectile.instantiate()
 	nd.global_position = self.global_position + Vector2.ONE.rotated(randf_range(0, 2 * PI)) * 30
 	get_tree().current_scene.add_child(nd)
 	nd.setup(attack, projectile_speed, dir, projectile_lifespan ** 2)
+	nd.look_at(global_position)

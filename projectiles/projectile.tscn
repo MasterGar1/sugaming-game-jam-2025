@@ -1,15 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c24e0ccpyff82"]
+[gd_scene load_steps=4 format=3 uid="uid://c24e0ccpyff82"]
 
 [ext_resource type="Script" uid="uid://qxx11ao1gffs" path="res://projectiles/projectile.gd" id="1_wrf7x"]
 [ext_resource type="PackedScene" uid="uid://c8ljwvtcmk328" path="res://components/hitbox.tscn" id="2_7nr1q"]
 [ext_resource type="Texture2D" uid="uid://b8fg5ylpjo3t1" path="res://icon.svg" id="2_ighsu"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_7ypqm"]
-radius = 46.0977
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7nr1q"]
-radius = 72.0
-height = 178.0
 
 [node name="Projectile" type="CharacterBody2D"]
 z_index = 1
@@ -17,18 +10,16 @@ collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_wrf7x")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ighsu")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_7ypqm")
 
 [node name="Hitbox" parent="." instance=ExtResource("2_7nr1q")]
 collision_layer = 0
 collision_mask = 0
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
-shape = SubResource("CapsuleShape2D_7nr1q")
 debug_color = Color(4.50023e-06, 0.647847, 0.199274, 0.42)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_ighsu")
 
 [editable path="Hitbox"]
