@@ -6,7 +6,7 @@ const CHUNK_SIZE: Vector2 = Vector2.ONE * 48
 const TILE_SIZE: int = 48
 var noise: FastNoiseLite = FastNoiseLite.new()
 
-func _physics_process(_delta: float) -> void:
+func _ready() -> void:
 	generate_chunk(Vector2.ZERO)
 	generate_chunk(Vector2(1000, 0))
 
