@@ -34,12 +34,26 @@ func die() -> void:
 	if health <= 0:
 		Global.score += score
 		Global.display_number(score, position + Vector2.UP * 10, 1.5, "#FFF", "+")
+		
+		var timer: Timer = get_parent().get_parent().get_child(0).get_child(0).get_child(0)
+		var current_time = timer.time_left
+		timer.stop()
+		timer.wait_time = current_time + 2
+		timer.start()
+		timer.wait_time = Global.BASE_LEVELUP_COOLDOWN
+		
 		queue_free()
 
 func _on_hurtbox_entered(area: Hitbox) -> void:
 	if area.get_parent() is Projectile:
 		area.get_parent().expire()
-	take_damage(area)
+	elif area.get_parent() is DragonBreath:
+		area.get_parent().add_enemy(self)
+	die()
+
+func _on_hurtbox_exited(area: Hitbox) -> void:
+	if area.get_parent() is DragonBreath:
+		area.get_parent().remove_enemy(self)
 
 func _on_navigation_velocity_computed(safe_velocity: Vector2) -> void:
 	velocity = safe_velocity

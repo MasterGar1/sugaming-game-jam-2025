@@ -1,0 +1,60 @@
+extends Skill
+class_name DragonBreath
+
+@onready var hitbox := $Hitbox
+@onready var collider := $Hitbox/CollisionShape2D
+
+@export var max_charge: float:
+	get: return 100 * (1 + level) / 2
+@export var charge: float = max_charge
+
+var cnt: int = 0
+var enemies: Array[Enemy]
+var damage: float:
+	get: return 0.5 * (2 ** level)
+	
+func add_enemy(enemy: Enemy) -> void:
+	enemies.append(enemy)
+	enemy.speed -= 0.2 * (1 + level)
+	
+func remove_enemy(enemy: Enemy) -> void:
+	enemies.erase(enemy)
+	enemy.speed += 0.2 * (1 + level)
+	
+func level_up() -> void:
+	super()
+	collider.shape.height *= 1.2
+	collider.disabled = true
+	charge = max_charge
+	
+func _ready() -> void:
+	collider.disabled = true
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed('dragon breath') and charge >= 0:
+		collider.disabled = false
+		
+	if event.is_action_released('dragon breath'):
+		collider.disabled = true
+
+func _process(delta):
+	var mouse_pos = get_global_mouse_position()
+	hitbox.look_at(mouse_pos)
+	hitbox.rotate(PI / 2)
+	cnt += 1
+	
+	if not collider.disabled:
+		if cnt % 8 == 0:
+			for enemy in enemies:
+				enemy.take_damage(hitbox)
+				enemy.die()
+		
+		charge -= 0.5
+		
+		if charge <= 0:
+			collider.disabled = true
+			enemies.clear()
+	else:
+		charge = min(charge + 0.3, max_charge)
+		
+	current_count = int(charge)

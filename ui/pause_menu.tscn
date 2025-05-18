@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpjbw84u8eflx"]
+[gd_scene load_steps=3 format=3 uid="uid://bge4u6mon07oh"]
 
 [ext_resource type="Script" uid="uid://c4tbe8c7fbs7d" path="res://ui/pause_menu.gd" id="1_50142"]
 
@@ -62,10 +62,11 @@ text = "
 Controls:
 
 WASD - move
-Space/Left click - shoot
+Left click - shoot
 Shift - Devil Dash
 C - Temporal prison
-Right click - Cellular Desintegration"
+Right click - Cellular Desintegration
+Space - Dragon Breath"
 horizontal_alignment = 1
 
 [node name="HBox" type="HBoxContainer" parent="Margin/VBox"]

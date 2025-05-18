@@ -1,0 +1,86 @@
+[gd_scene load_steps=12 format=3 uid="uid://6qy7l1yc5b1m"]
+
+[ext_resource type="Script" uid="uid://c1huhbbv5blaf" path="res://world/main_menu.gd" id="1_ctg6d"]
+[ext_resource type="Texture2D" uid="uid://pboayg3685r0" path="res://textures/Zombie-Tileset---_0077_Capa-78.png" id="1_p6djx"]
+[ext_resource type="Script" uid="uid://blxiu3m2mmxiy" path="res://ui/play_button.gd" id="2_6q35d"]
+[ext_resource type="Texture2D" uid="uid://cqmyoxs05fiee" path="res://textures/Zombie-Tileset---_0078_Capa-79.png" id="2_ctg6d"]
+[ext_resource type="PackedScene" uid="uid://d2p8ovrjf8r5y" path="res://world/world.tscn" id="3_6fjm2"]
+
+[sub_resource type="FontFile" id="FontFile_6q35d"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_mmdvd"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+agent_radius = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6fjm2"]
+resource_name = "Dark"
+texture = ExtResource("1_p6djx")
+0:0/0 = 0
+0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_mmdvd")
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_fn3g3"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+agent_radius = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ugk75"]
+resource_name = "Light"
+texture = ExtResource("2_ctg6d")
+0:0/0 = 0
+0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_fn3g3")
+
+[sub_resource type="TileSet" id="TileSet_lmief"]
+navigation_layer_0/layers = 1
+sources/0 = SubResource("TileSetAtlasSource_6fjm2")
+sources/1 = SubResource("TileSetAtlasSource_ugk75")
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_ctg6d")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Title" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 475.0
+offset_top = 70.0
+offset_right = 1401.0
+offset_bottom = 331.0
+theme_override_colors/default_color = Color(0.733333, 0.635294, 0, 1)
+theme_override_constants/shadow_offset_y = -5
+theme_override_constants/shadow_offset_x = 10
+theme_override_fonts/bold_font = SubResource("FontFile_6q35d")
+theme_override_font_sizes/normal_font_size = 171
+theme_override_font_sizes/bold_font_size = 0
+text = "Skill Issue
+"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 621.0
+offset_top = 351.0
+offset_right = 1225.0
+offset_bottom = 435.0
+theme_override_font_sizes/font_size = 61
+text = "Intro text. Intro text."
+
+[node name="Play" type="Button" parent="CanvasLayer"]
+offset_left = 702.0
+offset_top = 606.0
+offset_right = 1152.0
+offset_bottom = 764.0
+theme_override_font_sizes/font_size = 126
+text = "Play"
+script = ExtResource("2_6q35d")
+target_scene = ExtResource("3_6fjm2")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+scale = Vector2(3, 3)
+tile_set = SubResource("TileSet_lmief")
+rendering_quadrant_size = 32

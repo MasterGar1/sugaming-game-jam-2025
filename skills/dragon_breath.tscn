@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bokhihqadipol"]
+
+[ext_resource type="Script" uid="uid://dgh18pgaskki5" path="res://skills/dragon_breath.gd" id="1_diofw"]
+[ext_resource type="Texture2D" uid="uid://bh284sawx3w3f" path="res://textures/flamebreath.png" id="2_mdki0"]
+[ext_resource type="PackedScene" uid="uid://c8ljwvtcmk328" path="res://components/hitbox.tscn" id="2_p0yot"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mdki0"]
+radius = 83.0
+height = 460.0
+
+[node name="DragonBreath" type="Node2D"]
+script = ExtResource("1_diofw")
+skill_name = "Dragon Breath"
+image = ExtResource("2_mdki0")
+
+[node name="Hitbox" parent="." instance=ExtResource("2_p0yot")]
+position = Vector2(2, 1)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2(-1, -231)
+shape = SubResource("CapsuleShape2D_mdki0")
+
+[editable path="Hitbox"]

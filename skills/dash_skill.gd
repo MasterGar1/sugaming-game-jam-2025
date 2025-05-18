@@ -1,4 +1,5 @@
 extends Skill
+class_name Dash
 
 const DASH_SPEED: float = 20.0
 
