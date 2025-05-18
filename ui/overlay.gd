@@ -31,9 +31,12 @@ func _process(_delta: float) -> void:
 	score.text = "Score: %s" % Global.score
 	time.text = "Time: %s" % get_time_formatted()
 	for i in range(player.skill_holder.get_child_count()):
-		skills.get_child(i).value = player.skill_holder.get_child(i).cooldown.time_left
+		skills.get_child(i).value = player.skill_holder.get_child(i).cooldown.time_left if "cooldown" in player.skill_holder.get_child(i) else 0.0
 		var cnt: int = player.skill_holder.get_child(i).current_count
-		skills.get_child(i).get_child(0).text = str(cnt) if player.skill_holder.get_child(i).cooldown.is_stopped() and cnt > 1 else ''
+		if "cooldown" in player.skill_holder.get_child(i):
+			skills.get_child(i).get_child(0).text = str(cnt) if player.skill_holder.get_child(i).cooldown.is_stopped() and cnt > 1 else ''
+		else:
+			skills.get_child(i).get_child(0).text = str(cnt)
 
 func remove_skill(nm: StringName) -> void:
 	for c in skills.get_children():

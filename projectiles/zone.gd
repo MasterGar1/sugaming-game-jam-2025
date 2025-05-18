@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var hitbox: Hitbox = $Hitbox
 @onready var timer: Timer = $Timer
+@onready var particles: GPUParticles2D = $GPUParticles2D
 
 @export var damage: int
 @export var lifespan: int
@@ -20,6 +21,8 @@ func setup(dmg: int, ls: int, player_position: Vector2, radius: int, reduction: 
 	damage = dmg
 	position = player_position
 	speed_reduction = reduction
+	particles.process_material.emission_sphere_radius = radius
+	particles.lifetime = ls
 
 ## Kills the zone
 func expire() -> void:

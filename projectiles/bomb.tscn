@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2eanr4chcrfr"]
+[gd_scene load_steps=5 format=3 uid="uid://c2eanr4chcrfr"]
 
 [ext_resource type="Script" uid="uid://d4keim851jli2" path="res://projectiles/bomb.gd" id="1_8u238"]
 [ext_resource type="PackedScene" uid="uid://c8ljwvtcmk328" path="res://components/hitbox.tscn" id="2_3xfjl"]
+[ext_resource type="Material" uid="uid://c86j6jlawvfi1" path="res://particles/bomb.tres" id="3_dlca0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3xfjl"]
 radius = 80.0999
@@ -26,6 +27,12 @@ one_shot = true
 [node name="Tick" type="Timer" parent="."]
 wait_time = 0.6
 autostart = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 40
+lifetime = 5.0
+explosiveness = 0.8
+process_material = ExtResource("3_dlca0")
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="Hitbox" to="." method="_on_hitbox_body_exited"]
