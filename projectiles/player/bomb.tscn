@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2eanr4chcrfr"]
+[gd_scene load_steps=6 format=3 uid="uid://c2eanr4chcrfr"]
 
 [ext_resource type="Script" uid="uid://d4keim851jli2" path="res://projectiles/player/bomb.gd" id="1_8u238"]
 [ext_resource type="PackedScene" uid="uid://c8ljwvtcmk328" path="res://components/hitbox.tscn" id="2_3xfjl"]
@@ -6,6 +6,18 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3xfjl"]
 radius = 80.0999
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_aq8re"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 30.0
+angle_min = -333.0
+angle_max = 102.7
+gravity = Vector3(0, 0, 0)
+damping_max = 10.0
+scale_min = 10.0
+scale_max = 20.0
+color = Color(1, 0.72833, 0.55283, 1)
 
 [node name="Bomb" type="Node2D"]
 script = ExtResource("1_8u238")
@@ -31,9 +43,13 @@ autostart = true
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 z_index = 2
 amount = 40
-lifetime = 5.0
+lifetime = 2.0
 explosiveness = 0.8
 process_material = ExtResource("3_dlca0")
+
+[node name="Ground" type="GPUParticles2D" parent="."]
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_aq8re")
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="Hitbox" to="." method="_on_hitbox_body_exited"]

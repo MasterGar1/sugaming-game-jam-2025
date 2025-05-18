@@ -22,8 +22,8 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	sacrifice_progress.value = get_parent().sacrifice.timer.time_left / Global.BASE_LEVELUP_COOLDOWN * 100
 	healthbar.value = 1.0 * player.health / player.max_health * 100.0
-	score.text = "Score: %s" % Global.score
-	time.text = "Time: %s" % Global.get_time_formatted()
+	score.text = "Score %s" % Global.score
+	time.text = "Time %s" % Global.get_time_formatted()
 	
 	for i in range(player.skill_holder.get_child_count()):
 		skills.get_child(i).value = player.skill_holder.get_child(i).cooldown.time_left if "cooldown" in player.skill_holder.get_child(i) else 0.0

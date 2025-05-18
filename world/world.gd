@@ -21,7 +21,7 @@ var weights: Array[float] = [0.5, 0.3, 0.2, 0.2, 0.1]
 const TILE_SIZE: int = 48
 const CHUNK_SIZE: Vector2 = Vector2.ONE * TILE_SIZE
 const SPAWN_DISTANCE: int = 48
-const ENEMY_CAP: int = 2
+const ENEMY_CAP: int = 50
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
 func _physics_process(_delta: float) -> void:

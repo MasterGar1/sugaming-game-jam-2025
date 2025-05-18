@@ -4,6 +4,7 @@ extends Node2D
 @onready var cooldown := $Cooldown
 @onready var shape := $Hitbox/CollisionShape2D
 @onready var particles: GPUParticles2D = $GPUParticles2D
+@onready var ground: GPUParticles2D = $Ground
 
 @export var damage: int
 @export var lifespan: int
@@ -24,8 +25,9 @@ func setup(dmg: int, start_position: Vector2, ls: int, rd: int) -> void:
 	damage_burn = floor(damage / 2.0)
 	damage_base = damage
 	cooldown.start(lifespan)
-	particles.lifetime = lifespan
-	particles.process_material.radial_accel_max = rd
+	ground.emitting = true
+	ground.lifetime = lifespan
+	ground.process_material.emission_sphere_radius = rd
 
 ## Kills the bomb
 func expire() -> void:
