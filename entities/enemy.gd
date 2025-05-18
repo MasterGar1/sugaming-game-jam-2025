@@ -44,7 +44,13 @@ func _on_hurtbox_entered(area: Hitbox) -> void:
 	take_damage(area)
 	if area.get_parent() is Projectile:
 		area.get_parent().expire()
+	elif area.get_parent() is DragonBreath:
+		area.get_parent().add_enemy(self)
 	die()
+
+func _on_hurtbox_exited(area: Hitbox) -> void:
+	if area.get_parent() is DragonBreath:
+		area.get_parent().remove_enemy(self)
 
 func _on_navigation_velocity_computed(safe_velocity: Vector2) -> void:
 	velocity = safe_velocity

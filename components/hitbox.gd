@@ -3,5 +3,5 @@ class_name Hitbox
 
 @onready var collision := $CollisionShape2D
 
-var damage: int:
+var damage: float:
 	get: return owner.damage

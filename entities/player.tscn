@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bk5ewacumhgtj"]
+[gd_scene load_steps=11 format=3 uid="uid://bk5ewacumhgtj"]
 
 [ext_resource type="Script" uid="uid://dg5itiqsnv06l" path="res://entities/player.gd" id="1_merdl"]
 [ext_resource type="Texture2D" uid="uid://b8fg5ylpjo3t1" path="res://icon.svg" id="2_b0kkn"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cmdwsf44r87jy" path="res://components/camera.gd" id="3_e4p34"]
 [ext_resource type="PackedScene" uid="uid://sodkubjdowjx" path="res://components/hurtbox.tscn" id="3_rfe5m"]
 [ext_resource type="PackedScene" uid="uid://byfqnqtg3tgr7" path="res://skills/mouse_bomb.tscn" id="4_6nm46"]
+[ext_resource type="PackedScene" uid="uid://bokhihqadipol" path="res://skills/dragon_breath.tscn" id="5_i623q"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e4p34"]
 radius = 55.0
@@ -20,7 +21,7 @@ height = 166.0
 z_index = 1
 collision_layer = 9
 script = ExtResource("1_merdl")
-skills = Array[PackedScene]([ExtResource("2_qsoyl"), ExtResource("3_6nm46"), ExtResource("4_6nm46")])
+skills = Array[PackedScene]([ExtResource("2_qsoyl"), ExtResource("3_6nm46"), ExtResource("4_6nm46"), ExtResource("5_i623q")])
 max_health = 100
 health = 100
 attack = 10

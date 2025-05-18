@@ -5,7 +5,7 @@ const BASE_LEVELUP_COOLDOWN: int = 30
 var score: int = 0
 var time_secs: float = 0
 
-func display_number(value: int, position: Vector2, size: float = 1, color: String = "#FFF", prefix: String = ""):
+func display_number(value: float, position: Vector2, size: float = 1, color: String = "#FFF", prefix: String = ""):
 	var number = Label.new()
 	number.global_position = position
 	number.text = prefix + str(value)
