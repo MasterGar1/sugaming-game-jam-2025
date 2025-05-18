@@ -3,9 +3,10 @@ class_name DragonBreath
 
 @onready var hitbox := $Hitbox
 @onready var collider := $Hitbox/CollisionShape2D
+@onready var particles: GPUParticles2D = $Hitbox/GPUParticles2D
 
 @export var max_charge: float:
-	get: return 100 * (1 + level) / 2
+	get: return 100 * (1 + level) / 2.0
 @export var charge: float = max_charge
 
 var cnt: int = 0
@@ -24,20 +25,21 @@ func remove_enemy(enemy: Enemy) -> void:
 func level_up() -> void:
 	super()
 	collider.shape.height *= 1.2
-	collider.disabled = true
+	change_state(true)
 	charge = max_charge
 	
+func change_state(state: bool) -> void:
+	collider.disabled = state
+	particles.emitting = not state
+	
 func _ready() -> void:
-	collider.disabled = true
+	change_state(true)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed('dragon breath') and charge >= 0:
-		collider.disabled = false
-		
-	if event.is_action_released('dragon breath'):
-		collider.disabled = true
+		change_state(charge < 0)
 
-func _process(delta):
+func _process(_delta: float) -> void:
 	var mouse_pos = get_global_mouse_position()
 	hitbox.look_at(mouse_pos)
 	hitbox.rotate(PI / 2)
@@ -52,7 +54,7 @@ func _process(delta):
 		charge -= 0.5
 		
 		if charge <= 0:
-			collider.disabled = true
+			change_state(true)
 			enemies.clear()
 	else:
 		charge = min(charge + 0.3, max_charge)

@@ -1,10 +1,24 @@
-[gd_scene load_steps=11 format=3 uid="uid://d2p8ovrjf8r5y"]
+[gd_scene load_steps=30 format=3 uid="uid://d2p8ovrjf8r5y"]
 
 [ext_resource type="Script" uid="uid://3810ju0dfdtb" path="res://world/world.gd" id="1_6xmxd"]
 [ext_resource type="PackedScene" uid="uid://swubrvxm3yfo" path="res://ui/gui.tscn" id="2_fn3g3"]
 [ext_resource type="Texture2D" uid="uid://pboayg3685r0" path="res://textures/Zombie-Tileset---_0077_Capa-78.png" id="2_sc4t8"]
 [ext_resource type="PackedScene" uid="uid://bk5ewacumhgtj" path="res://entities/player.tscn" id="2_tcf2h"]
 [ext_resource type="Texture2D" uid="uid://cqmyoxs05fiee" path="res://textures/Zombie-Tileset---_0078_Capa-79.png" id="3_ai45w"]
+[ext_resource type="Texture2D" uid="uid://cb1a4w08uulov" path="res://textures/Zombie-Tileset---_0144_Capa-145.png" id="4_ocfjn"]
+[ext_resource type="Texture2D" uid="uid://3sbcg1l8slbh" path="res://textures/Zombie-Tileset---_0151_Capa-152.png" id="5_dqqhb"]
+[ext_resource type="Texture2D" uid="uid://bddftbwjct5ap" path="res://textures/Zombie-Tileset---_0154_Capa-155.png" id="6_b2suy"]
+[ext_resource type="Texture2D" uid="uid://bkv7jbaouaaqg" path="res://textures/Zombie-Tileset---_0155_Capa-156.png" id="7_h8lre"]
+[ext_resource type="Texture2D" uid="uid://de2wb5qlp4smc" path="res://textures/Zombie-Tileset---_0157_Capa-158.png" id="8_ysn08"]
+[ext_resource type="Texture2D" uid="uid://kjkqyfqitlhg" path="res://textures/Zombie-Tileset---_0158_Capa-159.png" id="9_m0cxt"]
+[ext_resource type="Texture2D" uid="uid://bhf3x7b1m2j3j" path="res://textures/Zombie-Tileset---_0159_Capa-160.png" id="10_j34ew"]
+[ext_resource type="Texture2D" uid="uid://dlbwf4i6wkx35" path="res://textures/Zombie-Tileset---_0162_Capa-163.png" id="11_p2iis"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_mmdvd"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_fn3g3"]
+frequency = 0.35
+fractal_octaves = 1
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mmdvd"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -35,16 +49,81 @@ navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_mmdvd")
 sources/1 = SubResource("TileSetAtlasSource_fn3g3")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aysyn"]
+texture = ExtResource("4_ocfjn")
+texture_region_size = Vector2i(17, 14)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o1net"]
+texture = ExtResource("5_dqqhb")
+texture_region_size = Vector2i(16, 15)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, -4, 8, -4, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3ljsx"]
+texture = ExtResource("6_b2suy")
+texture_region_size = Vector2i(12, 16)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -8, 4, -8, 4, 8, -4, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gi7ib"]
+texture = ExtResource("7_h8lre")
+texture_region_size = Vector2i(12, 16)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -8, 4, -8, 4, 8, -4, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0pnie"]
+texture = ExtResource("8_ysn08")
+texture_region_size = Vector2i(12, 16)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -8, 4, -8, 4, 8, -4, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_llyeo"]
+texture = ExtResource("9_m0cxt")
+texture_region_size = Vector2i(12, 16)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -8, 4, -8, 4, 8, -4, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2tavo"]
+texture = ExtResource("10_j34ew")
+texture_region_size = Vector2i(12, 16)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -8, 4, -8, 4, 8, -4, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k8wd0"]
+texture = ExtResource("11_p2iis")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -8, 4, -8, 4, -4, 8, -4, 8, 8, -8, 8, -8, -4, -4, -4)
+
+[sub_resource type="TileSet" id="TileSet_j7vgi"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_aysyn")
+sources/1 = SubResource("TileSetAtlasSource_o1net")
+sources/2 = SubResource("TileSetAtlasSource_3ljsx")
+sources/3 = SubResource("TileSetAtlasSource_gi7ib")
+sources/4 = SubResource("TileSetAtlasSource_0pnie")
+sources/5 = SubResource("TileSetAtlasSource_llyeo")
+sources/6 = SubResource("TileSetAtlasSource_2tavo")
+sources/7 = SubResource("TileSetAtlasSource_k8wd0")
+
 [node name="World" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_6xmxd")
+noise1 = SubResource("FastNoiseLite_mmdvd")
+noise2 = SubResource("FastNoiseLite_fn3g3")
 
-[node name="GUI" parent="." instance=ExtResource("2_fn3g3")]
-
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="Ground" type="TileMapLayer" parent="."]
 scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_4717r")
 rendering_quadrant_size = 32
+
+[node name="Objects" type="TileMapLayer" parent="."]
+scale = Vector2(5, 5)
+tile_set = SubResource("TileSet_j7vgi")
+navigation_enabled = false
+
+[node name="GUI" parent="." instance=ExtResource("2_fn3g3")]
 
 [node name="Player" parent="." instance=ExtResource("2_tcf2h")]
 unique_name_in_owner = true
