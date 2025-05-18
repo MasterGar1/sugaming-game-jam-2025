@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://bdnc3tkmspgdl"]
 
-[ext_resource type="Script" path="res://world/main_menu.gd" id="1_ctg6d"]
+[ext_resource type="Script" uid="uid://c1huhbbv5blaf" path="res://world/main_menu.gd" id="1_ctg6d"]
 [ext_resource type="Texture2D" uid="uid://pboayg3685r0" path="res://textures/Zombie-Tileset---_0077_Capa-78.png" id="1_p6djx"]
 [ext_resource type="Script" uid="uid://blxiu3m2mmxiy" path="res://ui/play_button.gd" id="2_6q35d"]
 [ext_resource type="Texture2D" uid="uid://cqmyoxs05fiee" path="res://textures/Zombie-Tileset---_0078_Capa-79.png" id="2_ctg6d"]

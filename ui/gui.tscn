@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://swubrvxm3yfo"]
+[gd_scene load_steps=6 format=3 uid="uid://swubrvxm3yfo"]
 
 [ext_resource type="PackedScene" uid="uid://cxqey4neh32ye" path="res://ui/sacrifice_menu.tscn" id="1_3f2kh"]
 [ext_resource type="Script" uid="uid://ba0603xfgjxt5" path="res://ui/gui.gd" id="1_xlv5r"]
 [ext_resource type="PackedScene" uid="uid://dk3fwaou182ef" path="res://ui/overlay.tscn" id="3_mcydh"]
 [ext_resource type="PackedScene" uid="uid://bge4u6mon07oh" path="res://ui/pause_menu.tscn" id="5_fr2ss"]
+[ext_resource type="PackedScene" uid="uid://b55a84l4ttqc1" path="res://ui/death_menu.tscn" id="5_juqqw"]
 
 [node name="GUI" type="CanvasLayer"]
 process_mode = 3
@@ -16,3 +17,9 @@ visible = false
 
 [node name="PauseMenu" parent="." instance=ExtResource("5_fr2ss")]
 visible = false
+
+[node name="DeathMenu" parent="." instance=ExtResource("5_juqqw")]
+visible = false
+
+[editable path="Overlay"]
+[editable path="DeathMenu"]

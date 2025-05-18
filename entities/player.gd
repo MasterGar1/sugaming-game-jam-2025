@@ -13,6 +13,7 @@ var force_duration: float
 var movement_locked: bool = false
 
 signal end_movement_lock()
+signal death()
 
 func _ready() -> void:
 	projectile = preload('res://projectiles/player_projectile.tscn')
@@ -47,8 +48,8 @@ func apply_force(dir: Vector2, duration: float) -> void:
 
 ## WARNING: DON'T JUST queue_free()
 func die() -> void:
-	if health < 0:
-		print("dead") # For testing purposes
+	if health <= 0 and Global.in_game:
+		death.emit()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("shoot") and cooldown.is_stopped():
