@@ -12,7 +12,7 @@ var projectile: Resource
 @export var projectile_lifespan: int = 1000
 
 func take_damage(from_what: Hitbox) -> void:
-	health -= from_what.damage
+	health -= floor(from_what.damage)
 	Global.display_number(from_what.damage, position, 1, "#F00")
 	die()
 
