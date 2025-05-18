@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c2eanr4chcrfr"]
 
-[ext_resource type="Script" uid="uid://d4keim851jli2" path="res://projectiles/bomb.gd" id="1_8u238"]
+[ext_resource type="Script" uid="uid://d4keim851jli2" path="res://projectiles/player/bomb.gd" id="1_8u238"]
 [ext_resource type="PackedScene" uid="uid://c8ljwvtcmk328" path="res://components/hitbox.tscn" id="2_3xfjl"]
 [ext_resource type="Material" uid="uid://c86j6jlawvfi1" path="res://particles/bomb.tres" id="3_dlca0"]
 

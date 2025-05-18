@@ -5,7 +5,7 @@ class_name Enemy
 @onready var player: Player = get_tree().get_nodes_in_group('player').front()
 @onready var cooldown := $AttackCooldown
 
-@export var proj: PackedScene = preload('res://projectiles/enemy_projectile.tscn')
+@export var proj: PackedScene
 @export var score: int = 100
 @export var avoidance_range: float = 120.0
 
@@ -35,16 +35,11 @@ func die() -> void:
 		Global.score += score
 		Global.display_number(score, position + Vector2.UP * 10, 1.5, "#FFF", "+")
 		queue_free()
-		
-func take_damage(area: Hitbox) -> void:
-	super(area)
-	Global.display_number(area.damage, position, 1, "#F00")
 
 func _on_hurtbox_entered(area: Hitbox) -> void:
-	take_damage(area)
 	if area.get_parent() is Projectile:
 		area.get_parent().expire()
-	die()
+	take_damage(area)
 
 func _on_navigation_velocity_computed(safe_velocity: Vector2) -> void:
 	velocity = safe_velocity

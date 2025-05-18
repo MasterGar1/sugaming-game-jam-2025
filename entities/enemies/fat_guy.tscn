@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://bqds2cmwuohkj"]
+
+[ext_resource type="PackedScene" uid="uid://dugqfgqtqrbkt" path="res://entities/enemy.tscn" id="1_fydfp"]
+[ext_resource type="PackedScene" uid="uid://do1hgmmd6mbwa" path="res://projectiles/enemy/fat_guy_proj.tscn" id="2_ywr1x"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ywr1x"]
+radius = 84.0001
+height = 194.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fydfp"]
+radius = 294.16
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pq7lg"]
+radius = 104.0
+height = 244.0
+
+[node name="FatGuy" instance=ExtResource("1_fydfp")]
+proj = ExtResource("2_ywr1x")
+score = 550
+avoidance_range = 200.0
+max_health = 300
+health = 300
+attack = 25
+reload = 2.3
+projectile_speed = 1
+projectile_lifespan = 500
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(1.9375, 1.5625)
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CapsuleShape2D_ywr1x")
+
+[node name="CollisionShape2D" parent="AttackArea" index="0"]
+shape = SubResource("CircleShape2D_fydfp")
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+rotation = -1.57079
+shape = SubResource("CapsuleShape2D_pq7lg")
+
+[editable path="AttackArea"]
+[editable path="Hurtbox"]

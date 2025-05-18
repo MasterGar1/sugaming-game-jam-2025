@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfhbh36qodu4p"]
+
+[ext_resource type="PackedScene" uid="uid://dwwkqy2tfl80b" path="res://projectiles/enemy_projectile.tscn" id="1_2ja7u"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ja7u"]
+height = 50.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d4opj"]
+radius = 14.0
+height = 70.0
+
+[node name="Projectile" instance=ExtResource("1_2ja7u")]
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.203125, 0.546875)
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CapsuleShape2D_2ja7u")
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+shape = SubResource("CapsuleShape2D_d4opj")
+
+[editable path="Hitbox"]

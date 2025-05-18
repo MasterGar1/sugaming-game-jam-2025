@@ -1,7 +1,7 @@
 extends Skill
 
 @onready var cooldown := $Timer
-@onready var bomb := preload("res://projectiles/bomb.tscn")
+@onready var bomb := preload("res://projectiles/player/bomb.tscn")
 
 @export var base_damage: int = 10
 @export var base_lifespan: int = 2

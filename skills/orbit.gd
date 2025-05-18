@@ -3,7 +3,7 @@ class_name Orbit
 
 const DISTANCE: int = 200
 
-@onready var orb := preload("res://projectiles/orb.tscn")
+@onready var orb := preload("res://projectiles/player/orb.tscn")
 
 @export var base_damage: int = 10
 @export var base_orbit_speed: int = 2
