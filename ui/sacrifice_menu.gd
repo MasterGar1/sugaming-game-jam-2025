@@ -16,6 +16,7 @@ func skill_selected(sk) -> void:
 	
 	hide()
 	get_parent().pause()
+	Global.in_menu = false
 	remove_skills()
 	
 	if skills.get_child_count() > 0:
@@ -39,6 +40,7 @@ func remove_skills() -> void:
 func _on_timer_timeout() -> void:
 	if get_tree().get_nodes_in_group("player")[0].skill_holder.get_child_count() == 0: 
 		return
+	Global.in_menu = true
 	get_parent().pause()
 	add_skills()
 	show()
