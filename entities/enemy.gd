@@ -34,6 +34,14 @@ func die() -> void:
 	if health <= 0:
 		Global.score += score
 		Global.display_number(score, position + Vector2.UP * 10, 1.5, "#FFF", "+")
+		
+		var timer: Timer = get_parent().get_parent().get_child(0).get_child(0).get_child(0)
+		var current_time = timer.time_left
+		timer.stop()
+		timer.wait_time = current_time + 2
+		timer.start()
+		timer.wait_time = Global.BASE_LEVELUP_COOLDOWN
+		
 		queue_free()
 		
 func take_damage(area: Hitbox) -> void:
