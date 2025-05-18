@@ -12,7 +12,8 @@ height = 70.0
 [node name="Projectile" instance=ExtResource("1_2ja7u")]
 
 [node name="Sprite2D" parent="." index="0"]
-scale = Vector2(0.203125, 0.546875)
+position = Vector2(0, 0.499999)
+scale = Vector2(0.4375, 1.07813)
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource("CapsuleShape2D_2ja7u")

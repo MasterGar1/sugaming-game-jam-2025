@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://c66rp7slk4w3y"]
+[gd_scene load_steps=5 format=3 uid="uid://c66rp7slk4w3y"]
 
 [ext_resource type="PackedScene" uid="uid://dwwkqy2tfl80b" path="res://projectiles/enemy_projectile.tscn" id="1_u8se7"]
 
@@ -7,15 +7,28 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_n3hww"]
 radius = 131.004
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_u8se7"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 20.0
+angle_min = -186.4
+angle_max = 129.7
+gravity = Vector3(0, 0, 0)
+scale_min = 10.0
+scale_max = 20.0
+
 [node name="Projectile" instance=ExtResource("1_u8se7")]
 
 [node name="Sprite2D" parent="." index="0"]
-scale = Vector2(1.40625, 1.42188)
+scale = Vector2(3.5625, 3.5625)
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource("CircleShape2D_u8se7")
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
 shape = SubResource("CircleShape2D_n3hww")
+
+[node name="GPUParticles2D" parent="." index="3"]
+process_material = SubResource("ParticleProcessMaterial_u8se7")
 
 [editable path="Hitbox"]

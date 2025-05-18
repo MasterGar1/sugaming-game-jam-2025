@@ -1,0 +1,106 @@
+[gd_scene load_steps=5 format=3 uid="uid://dk3fwaou182ef"]
+
+[ext_resource type="Script" uid="uid://j0wkqyykxsh0" path="res://ui/overlay.gd" id="1_1mp40"]
+[ext_resource type="Texture2D" uid="uid://d0vs7517vlai0" path="res://textures/progress_bar_inner.png" id="3_552s0"]
+[ext_resource type="Texture2D" uid="uid://biap6ex3qa71p" path="res://textures/progress_bar_over.png" id="3_ps1qe"]
+[ext_resource type="Texture2D" uid="uid://dvtk8vbu67ktl" path="res://textures/progress_bar_inner2.png" id="4_552s0"]
+
+[node name="Overlay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_1mp40")
+metadata/_edit_use_anchors_ = true
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 500
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 500
+theme_override_constants/margin_bottom = 50
+
+[node name="VBox" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+
+[node name="SacrificeProgress" type="TextureProgressBar" parent="Margin/VBox"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+step = 0.001
+value = 50.0
+nine_patch_stretch = true
+stretch_margin_left = 16
+stretch_margin_top = 16
+stretch_margin_right = 16
+stretch_margin_bottom = 16
+texture_under = ExtResource("3_552s0")
+texture_over = ExtResource("3_ps1qe")
+texture_progress = ExtResource("3_552s0")
+tint_under = Color(0.446777, 0.446777, 0.446777, 1)
+tint_progress = Color(0.403099, 0.558122, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Skills" type="HBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Margin2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 480.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 30
+
+[node name="HBox" type="HBoxContainer" parent="Margin2"]
+layout_mode = 2
+
+[node name="Healthbar" type="TextureProgressBar" parent="Margin2/HBox"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+value = 50.0
+fill_mode = 3
+nine_patch_stretch = true
+stretch_margin_left = 16
+stretch_margin_top = 16
+stretch_margin_right = 16
+stretch_margin_bottom = 16
+texture_under = ExtResource("4_552s0")
+texture_over = ExtResource("3_ps1qe")
+texture_progress = ExtResource("4_552s0")
+tint_under = Color(0.31802, 0.31802, 0.31802, 1)
+tint_progress = Color(0.592157, 0.121569, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="VBox" type="VBoxContainer" parent="Margin2/HBox"]
+layout_mode = 2
+size_flags_horizontal = 10
+alignment = 2
+
+[node name="Score" type="Label" parent="Margin2/HBox/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Score: 0"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Time" type="Label" parent="Margin2/HBox/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Time: 0:00"
+metadata/_edit_use_anchors_ = true

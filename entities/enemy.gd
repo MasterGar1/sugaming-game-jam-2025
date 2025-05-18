@@ -35,7 +35,7 @@ func die() -> void:
 		Global.score += score
 		Global.display_number(score, position + Vector2.UP * 10, 1.5, "#FFF", "+")
 		
-		var timer: Timer = get_parent().get_parent().get_child(0).get_child(0).get_child(0)
+		var timer: Timer = get_tree().current_scene.gui.sacrifice.timer
 		var current_time = timer.time_left
 		timer.stop()
 		timer.wait_time = current_time + 2

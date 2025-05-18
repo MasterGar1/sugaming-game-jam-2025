@@ -9,10 +9,12 @@ radius = 18.0
 height = 78.0
 
 [node name="Projectile" instance=ExtResource("1_6vqpk")]
+modulate = Color(0.305, 0.754, 2, 1)
 collision_layer = 8
 
 [node name="Sprite2D" parent="." index="0"]
-scale = Vector2(0.25, 0.5625)
+visible = true
+scale = Vector2(0.5625, 1.15625)
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource("CapsuleShape2D_6vqpk")

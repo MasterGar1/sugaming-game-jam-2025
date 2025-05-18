@@ -1,10 +1,10 @@
 extends Control
 
-@onready var sacrifice_progress := $SacrificeProgress
-@onready var healthbar := $Healthbar
-@onready var score := $Score
-@onready var time := $Time
-@onready var skills := $Skills
+@onready var sacrifice_progress := $Margin/VBox/SacrificeProgress
+@onready var healthbar := $Margin2/HBox/Healthbar
+@onready var score := $Margin2/HBox/VBox/Score
+@onready var time := $Margin2/HBox/VBox/Time
+@onready var skills := $Margin/VBox/Skills
 @onready var skill_cooldown: Resource = preload("res://ui/skill_cooldown.tscn")
 
 @onready var player: Player = get_tree().get_nodes_in_group("player")[0]

@@ -3,9 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://c24e0ccpyff82" path="res://projectiles/projectile.tscn" id="1_hi54q"]
 
 [node name="Projectile" instance=ExtResource("1_hi54q")]
+modulate = Color(1.996, 0.561, 0.561, 1)
 collision_layer = 16
 
-[node name="Hitbox" parent="." index="1"]
+[node name="Hitbox" parent="." index="2"]
 collision_layer = 2
 
 [editable path="Hitbox"]
