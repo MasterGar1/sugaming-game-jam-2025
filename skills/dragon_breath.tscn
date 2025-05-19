@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bokhihqadipol"]
 
 [ext_resource type="Script" uid="uid://dgh18pgaskki5" path="res://skills/dragon_breath.gd" id="1_diofw"]
-[ext_resource type="Texture2D" uid="uid://cpofcb43cdq3y" path="res://textures/flamebreath.png" id="2_mdki0"]
+[ext_resource type="Texture2D" uid="uid://ch4xlkmn2rt2p" path="res://textures/flamebreath.png" id="2_mdki0"]
 [ext_resource type="PackedScene" uid="uid://c8ljwvtcmk328" path="res://components/hitbox.tscn" id="2_p0yot"]
 [ext_resource type="Material" uid="uid://bk5xng6xvsj6o" path="res://particles/dragon_breath.tres" id="4_abke5"]
 

@@ -6,7 +6,7 @@ class_name DragonBreath
 @onready var particles: GPUParticles2D = $Hitbox/GPUParticles2D
 
 @export var max_charge: float:
-	get: return 100 * (1 + level) / 2.0
+	get: return 100 * (1 + level)
 @export var charge: float = max_charge
 
 var cnt: int = 0
@@ -54,12 +54,12 @@ func _process(_delta: float) -> void:
 				enemy.take_damage(hitbox)
 				enemy.die()
 		
-		charge -= 0.5
+		charge -= 0.4
 		
 		if charge <= 0:
 			change_state(true)
 			enemies.clear()
 	else:
-		charge = min(charge + 0.3, max_charge)
+		charge = min(charge + 0.15, max_charge)
 		
 	current_count = int(charge)
