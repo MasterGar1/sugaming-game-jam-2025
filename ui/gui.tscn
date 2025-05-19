@@ -3,8 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cxqey4neh32ye" path="res://ui/sacrifice_menu.tscn" id="1_3f2kh"]
 [ext_resource type="Script" uid="uid://ba0603xfgjxt5" path="res://ui/gui.gd" id="1_xlv5r"]
 [ext_resource type="Theme" uid="uid://m0223o1jstv1" path="res://ui/theme.tres" id="2_02e3h"]
-[ext_resource type="Shader" uid="uid://bi1opme7dotk8" path="res://ui/gui.gdshader" id="2_fr2ss"]
-
+[ext_resource type="Shader" path="res://ui/gui.gdshader" id="2_fr2ss"]
 [ext_resource type="PackedScene" uid="uid://dk3fwaou182ef" path="res://ui/overlay.tscn" id="3_mcydh"]
 [ext_resource type="PackedScene" uid="uid://bge4u6mon07oh" path="res://ui/pause_menu.tscn" id="5_fr2ss"]
 [ext_resource type="PackedScene" uid="uid://db6ls1xt28ev7" path="res://ui/death_menu.tscn" id="5_juqqw"]

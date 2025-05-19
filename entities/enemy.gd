@@ -43,7 +43,7 @@ func die() -> void:
 		var timer: Timer = get_tree().current_scene.gui.sacrifice.timer
 		var current_time = timer.time_left
 		timer.stop()
-		timer.wait_time = current_time + 2
+		timer.wait_time = current_time + 1
 		timer.start()
 		timer.wait_time = Global.BASE_LEVELUP_COOLDOWN
 		

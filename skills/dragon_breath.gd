@@ -39,6 +39,8 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed('dragon breath') and charge >= 0:
 		change_state(charge < 0)
+	if event.is_action_released('dragon breath'):
+		change_state(true)
 
 func _process(_delta: float) -> void:
 	var mouse_pos = get_global_mouse_position()
