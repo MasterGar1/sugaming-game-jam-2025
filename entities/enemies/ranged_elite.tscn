@@ -2,18 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://dugqfgqtqrbkt" path="res://entities/enemy.tscn" id="1_yfa42"]
 [ext_resource type="PackedScene" uid="uid://7jryea3jknps" path="res://projectiles/enemy/ranged_elite_proj.tscn" id="2_78eex"]
-[ext_resource type="Texture2D" uid="uid://yeskmbs3soc3" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0448_Capa-449.png" id="3_gylok"]
-[ext_resource type="Texture2D" uid="uid://jbvhmona1k40" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0449_Capa-450.png" id="4_8unj0"]
-[ext_resource type="Texture2D" uid="uid://d1m345tq8knty" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0450_Capa-451.png" id="5_56m8l"]
-[ext_resource type="Texture2D" uid="uid://b510ijuyllrx" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0451_Capa-452.png" id="6_ssedg"]
-[ext_resource type="Texture2D" uid="uid://bolk8iqyjcxci" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0452_Capa-453.png" id="7_na64o"]
-[ext_resource type="Texture2D" uid="uid://b76pm2jnjkf14" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0453_Capa-454.png" id="8_041jt"]
-[ext_resource type="Texture2D" uid="uid://b7pseamwhgvd2" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0454_Capa-455.png" id="9_cb04j"]
-[ext_resource type="Texture2D" uid="uid://hy8md5wkj116" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0455_Capa-456.png" id="10_rk3ae"]
-[ext_resource type="Texture2D" uid="uid://dv8dwsje6diqp" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0456_Capa-457.png" id="11_qr2h6"]
-[ext_resource type="Texture2D" uid="uid://cu3mn4poq1b24" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0457_Capa-458.png" id="12_8ges1"]
-[ext_resource type="Texture2D" uid="uid://cwm1hhy2ddk8n" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0458_Capa-459.png" id="13_uii1y"]
-[ext_resource type="Texture2D" uid="uid://cdodm4dl83lyu" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0459_Capa-460.png" id="14_mnt7g"]
+[ext_resource type="Texture2D" uid="uid://b6xn3ssjyvo5k" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0448_Capa-449.png" id="3_gylok"]
+[ext_resource type="Texture2D" uid="uid://b40n7r2ldgvip" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0449_Capa-450.png" id="4_8unj0"]
+[ext_resource type="Texture2D" uid="uid://brca5aow2i5y2" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0450_Capa-451.png" id="5_56m8l"]
+[ext_resource type="Texture2D" uid="uid://blhnuncqubpyy" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0451_Capa-452.png" id="6_ssedg"]
+[ext_resource type="Texture2D" uid="uid://n11swo1p0saq" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0452_Capa-453.png" id="7_na64o"]
+[ext_resource type="Texture2D" uid="uid://ia0hkqel0y6l" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0453_Capa-454.png" id="8_041jt"]
+[ext_resource type="Texture2D" uid="uid://cyig1nu10ubci" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0454_Capa-455.png" id="9_cb04j"]
+[ext_resource type="Texture2D" uid="uid://cgtqhuurfhoen" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0455_Capa-456.png" id="10_rk3ae"]
+[ext_resource type="Texture2D" uid="uid://d0ceytpqg25t6" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0456_Capa-457.png" id="11_qr2h6"]
+[ext_resource type="Texture2D" uid="uid://6x3pqtqcmhlt" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0457_Capa-458.png" id="12_8ges1"]
+[ext_resource type="Texture2D" uid="uid://qijfsnnmouhf" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0458_Capa-459.png" id="13_uii1y"]
+[ext_resource type="Texture2D" uid="uid://b4boj3dr5nfeq" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0459_Capa-460.png" id="14_mnt7g"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3ckhg"]
 animations = [{
@@ -101,8 +101,8 @@ height = 226.0
 proj = ExtResource("2_78eex")
 score = 350
 avoidance_range = 700.0
-max_health = 40
-health = 40
+max_health = 10
+health = 10
 attack = 30
 reload = 3.5
 projectile_speed = 20

@@ -15,8 +15,9 @@ var can_see_player: bool = false
 func _ready() -> void:
 	projectile = proj
 	navigation.target_desired_distance = avoidance_range
-	health = floor(Global.time_secs) + health
-	max_health = health
+	max_health *= floor(Global.time_secs) / 10
+	health = max_health
+	score *= floor(Global.time_secs) / 10
 
 func _process(_delta: float) -> void:
 	if can_see_player and cooldown.is_stopped():

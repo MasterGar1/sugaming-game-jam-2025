@@ -2,15 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://dugqfgqtqrbkt" path="res://entities/enemy.tscn" id="1_fydfp"]
 [ext_resource type="PackedScene" uid="uid://do1hgmmd6mbwa" path="res://projectiles/enemy/fat_guy_proj.tscn" id="2_ywr1x"]
-[ext_resource type="Texture2D" uid="uid://1yaj61webwsy" path="res://textures/enemy_textures/big/Zombie-Tileset---_0412_Capa-413.png" id="3_1l6kg"]
-[ext_resource type="Texture2D" uid="uid://ykb2bownq6y8" path="res://textures/enemy_textures/big/Zombie-Tileset---_0413_Capa-414.png" id="4_b2q8f"]
-[ext_resource type="Texture2D" uid="uid://ck07s3c1mkpao" path="res://textures/enemy_textures/big/Zombie-Tileset---_0414_Capa-415.png" id="5_2batq"]
-[ext_resource type="Texture2D" uid="uid://d2pfnjlml1bge" path="res://textures/enemy_textures/big/Zombie-Tileset---_0415_Capa-416.png" id="6_fhbmr"]
-[ext_resource type="Texture2D" uid="uid://bd0bkigj725i" path="res://textures/enemy_textures/big/Zombie-Tileset---_0416_Capa-417.png" id="7_w8r1c"]
-[ext_resource type="Texture2D" uid="uid://baf01w6dvib3p" path="res://textures/enemy_textures/big/Zombie-Tileset---_0417_Capa-418.png" id="8_1yllg"]
-[ext_resource type="Texture2D" uid="uid://dc6tbbl5e6ron" path="res://textures/enemy_textures/big/Zombie-Tileset---_0418_Capa-419.png" id="9_p0w7r"]
-[ext_resource type="Texture2D" uid="uid://c3d14u3vcnkma" path="res://textures/enemy_textures/big/Zombie-Tileset---_0419_Capa-420.png" id="10_v1n23"]
-[ext_resource type="Texture2D" uid="uid://bleufwx68kdbd" path="res://textures/enemy_textures/big/Zombie-Tileset---_0420_Capa-421.png" id="11_d3q6p"]
+[ext_resource type="Texture2D" uid="uid://urq5qj2yu08r" path="res://textures/enemy_textures/big/Zombie-Tileset---_0412_Capa-413.png" id="3_1l6kg"]
+[ext_resource type="Texture2D" uid="uid://dhcll3wg8u1e0" path="res://textures/enemy_textures/big/Zombie-Tileset---_0413_Capa-414.png" id="4_b2q8f"]
+[ext_resource type="Texture2D" uid="uid://dyfw3ij8brp42" path="res://textures/enemy_textures/big/Zombie-Tileset---_0414_Capa-415.png" id="5_2batq"]
+[ext_resource type="Texture2D" uid="uid://dxahyplk04spn" path="res://textures/enemy_textures/big/Zombie-Tileset---_0415_Capa-416.png" id="6_fhbmr"]
+[ext_resource type="Texture2D" uid="uid://bgrlg4vwa5vft" path="res://textures/enemy_textures/big/Zombie-Tileset---_0416_Capa-417.png" id="7_w8r1c"]
+[ext_resource type="Texture2D" uid="uid://b51fvsuaqagrl" path="res://textures/enemy_textures/big/Zombie-Tileset---_0417_Capa-418.png" id="8_1yllg"]
+[ext_resource type="Texture2D" uid="uid://cb8f1biroolhh" path="res://textures/enemy_textures/big/Zombie-Tileset---_0418_Capa-419.png" id="9_p0w7r"]
+[ext_resource type="Texture2D" uid="uid://bk4jl8rf0fpf" path="res://textures/enemy_textures/big/Zombie-Tileset---_0419_Capa-420.png" id="10_v1n23"]
+[ext_resource type="Texture2D" uid="uid://5v2yaj1ruc0q" path="res://textures/enemy_textures/big/Zombie-Tileset---_0420_Capa-421.png" id="11_d3q6p"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ywr1x"]
 animations = [{
@@ -86,8 +86,8 @@ height = 244.0
 proj = ExtResource("2_ywr1x")
 score = 550
 avoidance_range = 200.0
-max_health = 300
-health = 300
+max_health = 100
+health = 100
 attack = 15
 reload = 2.3
 projectile_speed = 1

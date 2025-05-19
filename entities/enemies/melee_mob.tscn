@@ -2,15 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://dugqfgqtqrbkt" path="res://entities/enemy.tscn" id="1_y1xbl"]
 [ext_resource type="PackedScene" uid="uid://b8614f6xinggo" path="res://projectiles/enemy/melee_mob_proj.tscn" id="2_e47ap"]
-[ext_resource type="Texture2D" uid="uid://ccapgikbxqiuv" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0430_Capa-431.png" id="3_swqsp"]
-[ext_resource type="Texture2D" uid="uid://dgugj5c76wha3" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0431_Capa-432.png" id="4_fbvqg"]
-[ext_resource type="Texture2D" uid="uid://c5blofcobdjve" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0432_Capa-433.png" id="5_guic8"]
-[ext_resource type="Texture2D" uid="uid://boamx72noaq7k" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0433_Capa-434.png" id="6_rb4oj"]
-[ext_resource type="Texture2D" uid="uid://ppcwj0kh8a8y" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0434_Capa-435.png" id="7_p70yc"]
-[ext_resource type="Texture2D" uid="uid://btjs4mvhjqyk7" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0435_Capa-436.png" id="8_ney4y"]
-[ext_resource type="Texture2D" uid="uid://chxo0jgeqvdxa" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0436_Capa-437.png" id="9_372ws"]
-[ext_resource type="Texture2D" uid="uid://btmjg0qrhteoe" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0437_Capa-438.png" id="10_rahju"]
-[ext_resource type="Texture2D" uid="uid://csjgnketh33yf" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0438_Capa-439.png" id="11_wfrst"]
+[ext_resource type="Texture2D" uid="uid://18clyrfcu34x" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0430_Capa-431.png" id="3_swqsp"]
+[ext_resource type="Texture2D" uid="uid://bueugt6eigxl6" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0431_Capa-432.png" id="4_fbvqg"]
+[ext_resource type="Texture2D" uid="uid://d3bx8r40ohtn2" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0432_Capa-433.png" id="5_guic8"]
+[ext_resource type="Texture2D" uid="uid://dk0otvx0yjpr2" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0433_Capa-434.png" id="6_rb4oj"]
+[ext_resource type="Texture2D" uid="uid://6jmaac1gqwsn" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0434_Capa-435.png" id="7_p70yc"]
+[ext_resource type="Texture2D" uid="uid://df4v8penx5uwy" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0435_Capa-436.png" id="8_ney4y"]
+[ext_resource type="Texture2D" uid="uid://mif21gjs3fp2" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0436_Capa-437.png" id="9_372ws"]
+[ext_resource type="Texture2D" uid="uid://vf5rtgugrpxa" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0437_Capa-438.png" id="10_rahju"]
+[ext_resource type="Texture2D" uid="uid://cxfkwjikte73u" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0438_Capa-439.png" id="11_wfrst"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ju5tq"]
 animations = [{
@@ -83,8 +83,6 @@ radius = 71.007
 [node name="MeleeMob" instance=ExtResource("1_y1xbl")]
 proj = ExtResource("2_e47ap")
 score = 150
-max_health = 100
-health = 100
 attack = 10
 speed = 3.0
 reload = 1.8

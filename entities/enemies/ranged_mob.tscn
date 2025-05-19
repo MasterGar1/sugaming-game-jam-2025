@@ -2,15 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://dugqfgqtqrbkt" path="res://entities/enemy.tscn" id="1_rvr3s"]
 [ext_resource type="PackedScene" uid="uid://dfhbh36qodu4p" path="res://projectiles/enemy/ranged_mob_proj.tscn" id="2_le0p3"]
-[ext_resource type="Texture2D" uid="uid://ccapgikbxqiuv" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0430_Capa-431.png" id="3_hx6vs"]
-[ext_resource type="Texture2D" uid="uid://dgugj5c76wha3" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0431_Capa-432.png" id="4_uubqr"]
-[ext_resource type="Texture2D" uid="uid://c5blofcobdjve" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0432_Capa-433.png" id="5_2tjfj"]
-[ext_resource type="Texture2D" uid="uid://boamx72noaq7k" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0433_Capa-434.png" id="6_n4jbr"]
-[ext_resource type="Texture2D" uid="uid://ppcwj0kh8a8y" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0434_Capa-435.png" id="7_kk6vh"]
-[ext_resource type="Texture2D" uid="uid://btjs4mvhjqyk7" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0435_Capa-436.png" id="8_r37vq"]
-[ext_resource type="Texture2D" uid="uid://chxo0jgeqvdxa" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0436_Capa-437.png" id="9_hckae"]
-[ext_resource type="Texture2D" uid="uid://btmjg0qrhteoe" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0437_Capa-438.png" id="10_q65qe"]
-[ext_resource type="Texture2D" uid="uid://csjgnketh33yf" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0438_Capa-439.png" id="11_byhud"]
+[ext_resource type="Texture2D" uid="uid://18clyrfcu34x" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0430_Capa-431.png" id="3_hx6vs"]
+[ext_resource type="Texture2D" uid="uid://bueugt6eigxl6" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0431_Capa-432.png" id="4_uubqr"]
+[ext_resource type="Texture2D" uid="uid://d3bx8r40ohtn2" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0432_Capa-433.png" id="5_2tjfj"]
+[ext_resource type="Texture2D" uid="uid://dk0otvx0yjpr2" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0433_Capa-434.png" id="6_n4jbr"]
+[ext_resource type="Texture2D" uid="uid://6jmaac1gqwsn" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0434_Capa-435.png" id="7_kk6vh"]
+[ext_resource type="Texture2D" uid="uid://df4v8penx5uwy" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0435_Capa-436.png" id="8_r37vq"]
+[ext_resource type="Texture2D" uid="uid://mif21gjs3fp2" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0436_Capa-437.png" id="9_hckae"]
+[ext_resource type="Texture2D" uid="uid://vf5rtgugrpxa" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0437_Capa-438.png" id="10_q65qe"]
+[ext_resource type="Texture2D" uid="uid://cxfkwjikte73u" path="res://textures/enemy_textures/kid/Zombie-Tileset---_0438_Capa-439.png" id="11_byhud"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_le0p3"]
 animations = [{
@@ -85,8 +85,6 @@ height = 118.0
 proj = ExtResource("2_le0p3")
 score = 200
 avoidance_range = 400.0
-max_health = 50
-health = 50
 attack = 10
 reload = 2.5
 
