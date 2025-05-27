@@ -2,18 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://dugqfgqtqrbkt" path="res://entities/enemy.tscn" id="1_yfa42"]
 [ext_resource type="PackedScene" uid="uid://7jryea3jknps" path="res://projectiles/enemy/ranged_elite_proj.tscn" id="2_78eex"]
-[ext_resource type="Texture2D" uid="uid://yeskmbs3soc3" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0448_Capa-449.png" id="3_gylok"]
-[ext_resource type="Texture2D" uid="uid://jbvhmona1k40" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0449_Capa-450.png" id="4_8unj0"]
-[ext_resource type="Texture2D" uid="uid://d1m345tq8knty" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0450_Capa-451.png" id="5_56m8l"]
-[ext_resource type="Texture2D" uid="uid://b510ijuyllrx" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0451_Capa-452.png" id="6_ssedg"]
-[ext_resource type="Texture2D" uid="uid://bolk8iqyjcxci" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0452_Capa-453.png" id="7_na64o"]
-[ext_resource type="Texture2D" uid="uid://b76pm2jnjkf14" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0453_Capa-454.png" id="8_041jt"]
-[ext_resource type="Texture2D" uid="uid://b7pseamwhgvd2" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0454_Capa-455.png" id="9_cb04j"]
-[ext_resource type="Texture2D" uid="uid://hy8md5wkj116" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0455_Capa-456.png" id="10_rk3ae"]
-[ext_resource type="Texture2D" uid="uid://dv8dwsje6diqp" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0456_Capa-457.png" id="11_qr2h6"]
-[ext_resource type="Texture2D" uid="uid://cu3mn4poq1b24" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0457_Capa-458.png" id="12_8ges1"]
-[ext_resource type="Texture2D" uid="uid://cwm1hhy2ddk8n" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0458_Capa-459.png" id="13_uii1y"]
-[ext_resource type="Texture2D" uid="uid://cdodm4dl83lyu" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0459_Capa-460.png" id="14_mnt7g"]
+[ext_resource type="Texture2D" uid="uid://rib4y6tsvv3b" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0448_Capa-449.png" id="3_gylok"]
+[ext_resource type="Texture2D" uid="uid://cy70v855etf3r" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0449_Capa-450.png" id="4_8unj0"]
+[ext_resource type="Texture2D" uid="uid://dm4n4uvsclrl0" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0450_Capa-451.png" id="5_56m8l"]
+[ext_resource type="Texture2D" uid="uid://csbfq5w6f58tf" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0451_Capa-452.png" id="6_ssedg"]
+[ext_resource type="Texture2D" uid="uid://jjtw5phmlm7l" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0452_Capa-453.png" id="7_na64o"]
+[ext_resource type="Texture2D" uid="uid://b0rg27vg1umpe" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0453_Capa-454.png" id="8_041jt"]
+[ext_resource type="Texture2D" uid="uid://ck5cmvpshh5ng" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0454_Capa-455.png" id="9_cb04j"]
+[ext_resource type="Texture2D" uid="uid://bl45e4wgpxv68" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0455_Capa-456.png" id="10_rk3ae"]
+[ext_resource type="Texture2D" uid="uid://cvxo7ajbno88w" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0456_Capa-457.png" id="11_qr2h6"]
+[ext_resource type="Texture2D" uid="uid://cgowlu47hcjs4" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0457_Capa-458.png" id="12_8ges1"]
+[ext_resource type="Texture2D" uid="uid://dfbdtcop5wsjv" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0458_Capa-459.png" id="13_uii1y"]
+[ext_resource type="Texture2D" uid="uid://vew5oflknh0" path="res://textures/enemy_textures/banshee/Zombie-Tileset---_0459_Capa-460.png" id="14_mnt7g"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3ckhg"]
 animations = [{
@@ -105,7 +105,6 @@ max_health = 40
 health = 40
 attack = 30
 reload = 3.5
-projectile_speed = 20
 
 [node name="Sprite2D" parent="." index="0"]
 scale = Vector2(10, 10)

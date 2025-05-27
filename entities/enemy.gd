@@ -28,11 +28,10 @@ func _physics_process(delta: float) -> void:
 
 func follow_player(delta: float) -> void:
 	navigation.target_position = player.global_position
-	var dir: Vector2 = to_local(navigation.get_next_path_position())
-	navigation.set_velocity(dir.normalized() * Global.BASIC_SPEED * delta)
-	velocity *= speed
+	var dir: Vector2 = to_local(player.global_position).normalized()
+	velocity = dir * Global.BASIC_SPEED * delta * speed
 	move_and_slide()
-	sprite.flip_h = parse_animation(dir) == 'right' 
+	sprite.flip_h = parse_animation(dir) == 'right'
 	sprite.play(parse_animation(dir))
 
 func die() -> void:
@@ -43,7 +42,7 @@ func die() -> void:
 		var timer: Timer = get_tree().current_scene.gui.sacrifice.timer
 		var current_time = timer.time_left
 		timer.stop()
-		timer.wait_time = current_time + 2
+		timer.wait_time = current_time + 0.5
 		timer.start()
 		timer.wait_time = Global.BASE_LEVELUP_COOLDOWN
 		
