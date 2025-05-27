@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://db6ls1xt28ev7"]
 
-[ext_resource type="Script" path="res://ui/restart_button.gd" id="1_4eaoi"]
+[ext_resource type="Script" uid="uid://cxnvejce2km31" path="res://ui/restart_button.gd" id="1_4eaoi"]
 [ext_resource type="Script" uid="uid://bq2pxnmftj16v" path="res://ui/death_menu.gd" id="1_khx8v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hgyex"]
