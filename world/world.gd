@@ -19,8 +19,8 @@ extends Node2D
 var weights: Array[float] = [0.5, 0.3, 0.2, 0.2, 0.1]
 
 const TILE_SIZE: int = 48
-const CHUNK_SIZE: Vector2 = Vector2.ONE * TILE_SIZE
-const SPAWN_DISTANCE: int = 48
+const CHUNK_SIZE: Vector2 = Vector2.ONE * TILE_SIZE * 3 / 2
+const SPAWN_DISTANCE: int = 64
 const ENEMY_CAP: int = 50
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 

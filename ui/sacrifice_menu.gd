@@ -10,7 +10,7 @@ func _ready() -> void:
 func skill_selected(sk) -> void:
 	var skills = get_tree().get_nodes_in_group("player")[0].skill_holder
 	skills.remove_child(sk)
-	
+	get_tree().get_nodes_in_group("player")[0].health = get_tree().get_nodes_in_group("player")[0].max_health
 	for skill in skills.get_children():
 		skill.level_up()
 	

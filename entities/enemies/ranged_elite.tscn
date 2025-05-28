@@ -105,7 +105,6 @@ max_health = 10
 health = 10
 attack = 30
 reload = 3.5
-projectile_speed = 20
 
 [node name="Sprite2D" parent="." index="0"]
 scale = Vector2(10, 10)
